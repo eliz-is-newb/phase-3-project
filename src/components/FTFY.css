@@ -1,0 +1,81 @@
+.nes-btn.is-blood {
+    color: #fff;
+    background-color: #930000;
+  }
+  
+  .nes-btn.is-blood::after {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    bottom: -4px;
+    left: -4px;
+    content: "";
+    box-shadow: inset -4px -4px #620101;
+  }
+  
+  .nes-btn.is-blood:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: #af1818;
+  }
+  
+  .nes-btn.is-blood:hover::after {
+    box-shadow: inset -6px -6px #930000;
+  }
+  
+  .nes-btn.is-blood:focus {
+    box-shadow: 0 0 0 6px rgba(140, 32, 34, 0.3);
+  }
+  
+  .nes-btn.is-blood:active:not(.is-disabled)::after {
+    box-shadow: inset 4px 4px #770404;
+  }
+
+  /* new color! */
+  .nes-btn.is-snapchat {
+    color: #fff;
+    background-color: #ffdd00;
+  }
+  
+  .nes-btn.is-snapchat::after {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    bottom: -4px;
+    left: -4px;
+    content: "";
+    box-shadow: inset -4px -4px #cb9910;
+  }
+  
+  .nes-btn.is-snapchat:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color:#efd319;
+  }
+  
+  .nes-btn.is-snapchat:hover::after {
+    box-shadow: inset -6px -6px #cca403;
+  }
+  
+  .nes-btn.is-snapchat:focus {
+    box-shadow: 0 0 0 6px rgba(140, 32, 34, 0.3);
+  }
+  
+  .nes-btn.is-snapchat:active:not(.is-disabled)::after {
+    box-shadow: inset 4px 4px #efe012;
+  }
+
+  /* Mapping Over Game Library Scroll */
+
+  /* .game-card{
+    
+    z-index: 5;
+    height: 2000px;
+    width: 300px;
+    overflow-y: scroll; 
+    position: fixed;
+    top: 571px;
+    
+    margin-bottom: 900px;
+    
+  } */

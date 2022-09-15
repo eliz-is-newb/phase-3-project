@@ -1,0 +1,88 @@
+@font-face {
+    font-family: intro-font;
+    src: url(/public/Merchant\ Copy\ Doublesize.ttf);
+}
+
+
+*{
+font-family: intro-font;
+}
+#test{
+background-image: url("./gifbg.GIF");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+width: 100%;
+height:100vh;
+overflow: hidden;
+
+}
+
+#bggb{
+background-image: url("/public/bggb123.png");
+position: relative;
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+background-color:transparent;
+height: 450px;
+margin-right: 200px;
+aspect-ratio: 11/15.7;
+
+}
+
+#control{
+position: absolute;
+bottom:0;
+right:200px;
+left: 1119px;
+
+}
+
+#start-game{
+    cursor: pointer;
+    position:absolute;
+    right:46%;
+    bottom:16.7%;
+    height: 40px;
+    width: 40px;
+}
+
+#text1 {
+top: 152px;
+right:-200px;
+min-width:150px;
+margin-left: 120px;
+margin-bottom: 20px;
+margin-right: 1600px;
+padding-inline: 30px;
+overflow: hidden;
+}
+
+#text {
+top: 174px;
+right:-200px;
+width: 400px;
+min-width:400px;
+margin-left: 40px;
+margin-bottom: 20px;
+margin-right: 1500px;
+padding-inline: 30px;
+overflow: hidden;
+
+
+}
+
+
+#text2 {
+top: 242px;
+right:-820px;
+min-width:190px;
+margin-top: -60px;
+margin-left: 40px;
+margin-right: 1600px;
+padding-inline: 30px;
+overflow: hidden;
+}
+
+
