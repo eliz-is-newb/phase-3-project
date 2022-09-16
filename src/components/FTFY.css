@@ -65,6 +65,17 @@
     box-shadow: inset 4px 4px #efe012;
   }
 
+ 
+.nes-btn.is-lil-darkie::after {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    bottom: -4px;
+    left: -4px;
+    content: "";
+    box-shadow: inset -1px -1px #1C1B1BFF;
+}
+
   /* Mapping Over Game Library Scroll */
 
   /* .game-card{

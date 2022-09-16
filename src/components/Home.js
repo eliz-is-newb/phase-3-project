@@ -4,6 +4,8 @@ import { Resizable, ResizableBox } from 'react-resizable';
 import FavoriteListPopUp from "./FavoriteListPopUp";
 import Magic8Ball from "./Magic8Ball";
 import { Link } from "react-router-dom";
+import AdminDetails from "./AdminDetails";
+import InputForAdmin from "./InputForAdmin";
 
 
 
@@ -12,10 +14,22 @@ const Home = () => {
     // for hover effect on ghost/fav-icon <span> tag
     const [isShown, setIsShown] = useState(false); 
 
-    let handleClick1 = function(){
-        document.getElementById('dialog-rounded').showModal()
+    // for CRUD requirement
+    const [isAdmin, setIsAdmin] = useState(false);
+    const [showAdminInput, setShowAdminInput] = useState(false)
+    const [isAdminInputTrue, setIsAdminInputTrue] = useState("");
+    
+    //have a string as a key, if the input matches that key
+   
+
+    let toggleInput = function(){
+        setShowAdminInput(showAdminInput => !showAdminInput)
     }
 
+    
+    
+
+    
     let handleClick2 = function(){
         document.getElementById('magic8ball').showModal()
     }
@@ -25,18 +39,20 @@ const Home = () => {
 return (
     <>
     <div id="test"> 
-    <ResizableBox style={{marginLeft: "171px"}} width={1000} height={100} draggableOpts={{grid: [25, 25]}}
+    <ResizableBox style={{marginLeft: "184px"}} width={1000} height={100} draggableOpts={{grid: [25, 25]}}
     minConstraints={[100, 100]} maxConstraints={[300, 300]}>
         <Columns>
         <Columns.Column></Columns.Column>
          <Columns.Column size={5} style={{ padding: "-10px"}}>
-        <img  src="../bggbfuck1.png"
+            {/* GAMEBOY DIV IMG SHIT THAT I SHOULDNT HAVE TOUCHED HAHAHA */}
+        <img  src="../bggb23.png"
         style={{
+            marginLeft:"-29px",
             minHeight: "10%",
-            marginTop: "197px",
+            marginTop: "172px",
             marginBottom: "-15px", 
-            width: "1000px",
-            minWidth: "1000px",
+            width: "1514px",
+            minWidth: "1027px",
         }}
         ></img> 
        
@@ -51,12 +67,11 @@ return (
         <p className="nes-container is-rounded" style={{
             
             
-            minWidth:"600px",
-            marginRight: "555px",
-            marginTop: "-711px",
-            marginLeft: "445px",
+            minWidth:"688px",
+            marginTop: "-736px",
+            marginLeft: "461px",
             minHeight:"90px",
-            marginBottom:"-60px",
+            marginBottom:"79px",
             color: "white",
             stroke: "ActiveBorder",
             fontSize: "16px",
@@ -73,7 +88,7 @@ return (
 
             marginTop: "30px",
             padding: "2px",
-            marginLeft: "600px",
+            marginLeft: "590px",
             display: "flex",
             flexDirection: "column",
             alignItems:"center",
@@ -82,28 +97,50 @@ return (
         }}
         >
         {/* Game Button */}
-        <Link to="/gamelibrary" className="nes-btn" style={{marginBottom: "-100px", marginRight:"-95px", marginTop:"25px", fontSize: "16px", cursor: "pointer", width: "300px", stroke:"ButtonHighlight"}}
+        <Link to="/gamelibrary" className="nes-btn" 
+        style={{
+            marginBottom: "-106px", 
+            marginRight:"-11px", 
+            marginTop:"14px", 
+            fontSize: "14px", 
+            cursor: "pointer", 
+            width: "227px", 
+            stroke:"ButtonHighlight"}}
         >
         Brain dead games for <br /> burnt-out coders</Link> <br/>
         {/* Cartoons Button */}
-        <Link to="/cartoonlibrary" className="nes-btn" href="#" style={{marginBottom: "-2px", marginRight:"-100px", marginTop:"90px", fontSize: "16px", width:"140px", cursor: "pointer", height:'45px', stroke:"ButtonHighlight"}}
+        <Link to="/cartoonlibrary" className="nes-btn" href="#" 
+        style={{
+            paddingTop:"13px",
+            marginBottom: "-3px", 
+            marginRight:"376px", 
+            marginTop:"22px", 
+            fontSize: "14px", 
+            width:"120px", 
+            cursor: "pointer", 
+            height:'60px', 
+            stroke:"ButtonHighlight"}}
         >Cartoons </Link>
         <br /> 
         {/* Magic 8 Ball button */}
-        <a className="nes-btn" onClick={handleClick2}
+        <Link to="/quoteslibrary"  className="nes-btn" 
         style={{
-            marginBottom: "2px", 
+        
+           
+            marginBottom: "-5px", 
             cursor: "pointer", 
             stroke:"ButtonHighlight", 
-            marginRight:"-104px", 
-            width: "200px", 
-            marginTop:"-5px"}}
+            marginRight:"-403px", 
+            width: "120px", 
+            marginTop:"-81px",
+            height: "60px"
+        }}
         >
         <Magic8Ball/>
         <p 
        
-        style={{fontSize: "16px",}}>Magic 8 Ball</p>
-        </a>
+        style={{fontSize: "14px",}}>Magic 8 Ball</p>
+        </Link>
         </div>
        
        <div>
@@ -111,51 +148,153 @@ return (
 
        </div>
         
-        {/* this is for the stage for favorite counter. Where span (down below) says "1" */}
+        {/* Power Off/ Hover "Power" button */}
         <div>
-        <div style={{ marginTop: "40px",
+        <div style={{ 
+           
+            marginTop: "75px",
             padding: "2px",
-            marginTop: "-306px",
-            marginLeft: "1074px"}}>
-        <a href="#" className="nes-badge is-icon">
-        <span className="is-error" 
-        style={{backgroundColor: "red", color: "white", minWidth: "5", height: "17px", fontSize: "10px", fontWeight: "bold", cursor: "auto",
-                boxShadow: "0 0.3em red, 0 -0.3em red, 0.3em 0 red, -0.3em 0 red", width: "22px", left: "-14px", marginTop: "15px", textAlign: "center"}}
+            marginTop: "80px",
+            marginLeft: "423px"}}>
+        <span href="#" className="nes-badge is-icon"
+        style={{
+            // just hiding this element
+            display: "none",
+            backgroundColor: "gray", 
+            color: "white", 
+            minWidth: "7", 
+            height: "21px", 
+            fontSize: "10px", 
+            fontWeight: "bold", 
+            cursor: "auto",
+            boxShadow: "0 0.3em gray, 0 -0.3em gray, 0.3em 0 gray, -0.3em 0 gray", 
+            width: "20px", 
+            left: "-33px",
+            marginTop: "15px", 
+            textAlign: "center"}}
         // Right here
-               >1</span> 
+               >i</span> 
         {/* HOVER ! */}
-        <span className="is-warning" id="favbutton" 
-        onClick={handleClick1}
-
+        <Link to="/" className="nes-btn is-lil-darkie" id="favbutton" 
+        
+       
+            // copy pasta for actual button
         onMouseEnter={() => setIsShown(true)}
         onMouseLeave={() => setIsShown(false)}
         style={{
-            top: "3px", 
-            left:"2px", 
-            width: "70px",
-            boxShadow: "0 0.3em black, 0 -0.2em black, 0.2em 0 black, -0.2em 0 black",
+            zIndex: "20",
+            backgroundColor: "black",
+            padding:"3px",
+            top: "-2px", 
+            left:"-3px", 
+            width: "50px",
+            height: "48px",
+            boxShadow: "3 0.9em black, 3 -0.9em black, 0.2em 3 black, -0.2em 3 black",
             }}>
-            <img src="../favghost.png"style={{cursor: "pointer"}}></img></span>
-        </a></div>
-        <FavoriteListPopUp />
+            <img src="../powerbtn1.png"style={{cursor: "pointer"}}></img></Link>
+        </div> 
+      
+      
 
         {isShown && (
-        <span className="nes-badge" 
+        <p className="nes-badge" 
         style={{
+            position: "absolute",
             color: "white" ,
-            backgroundColor:"red", 
-            width: "260px",
-            boxShadow: "0 0.3em red, 0 -0.3em red, 0.3em 0 red, -0.3em 0 red", 
-            padding:"3px",
-            fontSize: "16px", 
+            backgroundColor:"black", 
+            width: "255px",
+            boxShadow: "0 0.1em white, 0 -0.1em white, 0.1em 0 white, -0.1em 0 white", 
+            paddingTop:"7px",
+            height: "33px",
+            fontSize: "13px", 
             textAlign: "center", 
-            marginTop: "-25px", 
-            marginLeft:"800px"}}>Boo! I ate ur favs!</span> )}
+            marginTop: "-45px", 
+            marginLeft:"499px",
+            cursor: "pointer",
+            marginRight: "-150px",
+            marginBottom: "-150px"
+            }}>Power Off?</p> )}
         </div>
         
 
+        {/* Control Panel ! - "Admin controls" */}
+        <div style={{ 
+            marginTop: "75px",
+            padding: "2px",
+            marginTop: "80px",
+            marginLeft: "397px",
+            marginRight: "206px"
+            }}>
+    
+        {/* HOVER ! */}
+        <div className="nes-btn is-lil-darkie" id="" 
+       
+       
+            // copy pasta for actual button
 
-       </ResizableBox>
+        onClick={toggleInput}
+        onMouseEnter={() => setIsAdmin(true)}
+        onMouseLeave={() => setIsAdmin(false)}
+        style={{
+            cursor: "pointer",
+            backgroundColor: "black",
+            scrollPaddingTop:"5px",
+            paddingBottom:"4",
+            top:  "-142px", 
+            left: "705px", 
+            width: "44px",
+            height: "45px",
+            boxShadow: "3 0.9em black, 3 -0.9em black, 0.2em 3 black, -0.2em 3 black",
+            }}>
+                {/* On click for admin input - here */}
+            <img src="../adminlock.png"
+            style={{cursor: "pointer"}}
+            
+            ></img></div>
+        
+            {isAdmin && (
+        <p className="nes-badge" 
+        style={{
+            zIndex: "18",
+            color: "white" ,
+            backgroundColor:"black", 
+            width: "105px",
+            boxShadow: "0 0.1em white, 0 -0.1em white, 0.1em 0 white, -0.1em 0 white", 
+            paddingTop:"7px",
+            height: "33px",
+            fontSize: "13px", 
+            textAlign: "center", 
+            marginTop: "-187px", 
+            marginLeft:"575px",
+            cursor: "pointer"
+            // set text here dodo bird lol
+            }}>admin?</p> )}
+            
+            
+
+            {/* Admin Details Pop-up */}
+            <AdminDetails />
+            {/* <InputForAdmin setAdminInput={setIsAdminInputTrue} adminInput={isAdminInputTrue} /> */}
+            <div id="input-container">
+            
+            {showAdminInput
+                ? <InputForAdmin setAdminInput={setIsAdminInputTrue} adminInput={isAdminInputTrue} />
+                : null
+            
+            }
+            </div>
+          
+           
+           
+            </div>
+
+            <div>
+
+            </div>
+        
+
+    </ResizableBox>
+      
         
     </div>
 

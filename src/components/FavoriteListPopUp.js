@@ -10,7 +10,9 @@ return (
         
 
    
-   <dialog className="nes-dialog is-rounded" id="dialog-rounded">
+   <dialog className="nes-dialog is-rounded" id="dialog-rounded"
+   style={{marginTop: "356px"}}
+   >
        <form method="dialog">
         {/* Title! */}
        <p class="title">Your Favorites:</p>
@@ -51,7 +53,12 @@ return (
             width: "65px",
             height:"65px"
           }}
-           className="nes-btn is-snapchat"> 
+           className="nes-btn is-snapchat"
+           style={{
+            position: "absolute",
+            
+        }}
+           > 
            <img src="../x-btn1.png"/>
            
           </button>

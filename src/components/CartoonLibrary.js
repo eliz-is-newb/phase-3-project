@@ -14,18 +14,19 @@ return (
 
     <div id="cartoonlibrary-bg">
             <div id="test"> 
-    <ResizableBox style={{marginLeft: "171px"}} width={1000} height={100} draggableOpts={{grid: [25, 25]}}
+    <ResizableBox style={{marginLeft: "184px"}} width={1000} height={100} draggableOpts={{grid: [25, 25]}}
     minConstraints={[100, 100]} maxConstraints={[300, 300]}>
         <Columns>
         <Columns.Column></Columns.Column>
          <Columns.Column size={5} style={{ padding: "-10px"}}>
         <img  src="../bggb84.png"
         style={{
+            marginLeft:"-29px",
             minHeight: "10%",
-            marginTop: "197px",
+            marginTop: "172px",
             marginBottom: "-15px", 
-            width: "1000px",
-            minWidth: "1000px",
+            width: "1514px",
+            minWidth: "1027px",
             overflow: "hidden"
         }}
         ></img> 

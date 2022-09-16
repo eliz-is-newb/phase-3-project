@@ -7,6 +7,7 @@ const QuotesLibrary = () => {
 
    const [frames, setFrames] = useState([{links: "this is a link"}])
 
+   
 
 
 return (
@@ -43,19 +44,18 @@ return (
         </div>
 
     <div id="test"> 
-    <ResizableBox style={{marginLeft: "171px"}} width={1000} height={100} draggableOpts={{grid: [25, 25]}}
+    <ResizableBox style={{marginLeft: "136px"}} width={1000} height={100} draggableOpts={{grid: [25, 25]}}
     minConstraints={[100, 100]} maxConstraints={[300, 300]}>
          
          
         <img  src="../bggb_black.png"
         style={{
+            marginLeft:"317px",
             minHeight: "10%",
-            marginTop: "200px",
-            marginLeft: "288px",
+            marginTop: "172px",
             marginBottom: "-15px", 
-            width: "1000px",
-            minWidth: "1000px",
-            overflow: "hidden"
+            width: "1514px",
+            minWidth: "1027px",
         }}
         ></img> 
         </ResizableBox>    
