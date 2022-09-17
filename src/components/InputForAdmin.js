@@ -32,7 +32,6 @@ return (
     style={{position: "absolute", zIndex: "90", top:"732px"}}>
     <label for="name_field"></label>
     <input 
-    onChange={handleInputChange}
     style={{ 
         backgroundColor: "black",
         color: "white" ,

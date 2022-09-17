@@ -227,7 +227,7 @@ return (
             }}>
     
         {/* HOVER ! */}
-        <div className="nes-btn is-lil-darkie" id="" 
+        <div className="nes-btn is-lil-darkie"
        
        
             // copy pasta for actual button
