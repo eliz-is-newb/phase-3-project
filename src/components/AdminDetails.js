@@ -2,7 +2,13 @@ import { useState, useEffect} from "react"
 
 import { Link } from "react-router-dom";
 
-const AdminDetails = () => {
+const AdminDetails = ({adminInput, setAdminInput}) => {
+
+// figure out how to connect this page to the admin lock button like how we did before with input admin. check
+// Home.js for breadcrumbs. Should be easy to figure out. 
+
+
+
 
 // this page is set up for:
 //    * password-protected admin details
@@ -227,10 +233,15 @@ const AdminDetails = () => {
             setRefresh(prevRefresh => !prevRefresh)
             } 
 
-    function quoteDelete() {
-            // Simple DELETE request with fetch
-            fetch(`http://localhost:3000/games/${gamesData.id}`, { method: 'DELETE' })
-                .then(() => quotesData({ status: 'Delete successful' }));
+    function quoteDelete() { // rewrite this one 
+        fetch(`http://localhost:3000/quotes/${quotesData.id}`, { 
+            method: "DELETE", 
+            headers: {
+            "Content-Type" : "application/json" 
+            }
+            }) 	
+            setRefresh(prevRefresh => !prevRefresh)
+            } 
             
     function cartoonDelete() {
         fetch(`http://localhost:3000/cartoons/${cartoonsData.id}`, { 
@@ -244,13 +255,15 @@ const AdminDetails = () => {
     // ######################################################
 
 
-    // admin menu set up: 
+    // admin menu set up: -- these are onClicks to open pop-ups 
+
     let openGameLibary = function(){
-        document.getElementById('game-library-window').showModal()
+        document.getElementById('games-library-window').showModal()
     }
 
+
     let openCartoonLibary = function(){
-        document.getElementById('cartoon-library-window').showModal()
+        document.getElementById('cartoons-library-window').showModal()
     }
 
     let openQuotesLibary = function(){
@@ -268,14 +281,19 @@ const AdminDetails = () => {
     //          * 3 forms to add new data (for each library) 
 
     // crud menu set up (delete is defined above): 
-    const [openCreateForm, setOpenCreateForm] = useState(false) // post
-    const [openUpdateForm, setOpenUpdateForm] = useState(false) // update
-    let toggleNewInput = function(){
-        setOpenCreateForm(openCreateForm => !openCreateForm)
+    const [openCreateForm, setOpenCreateForm] = useState(false) // post //defined inside regular function, have to be defined inside of a functional component
+
+    const [openUpdateForm, setOpenUpdateForm] = useState(false) // update 
+
+    let toggleNewInput = function(e){
+        // these are onSubmits to close the forms after submit 
+        setOpenCreateForm(!openCreateForm)
+        e.preventDefault()
     }
 
-    let toggleEditInput = function(){
-        setOpenUpdateForm(openUpdateForm => !openUpdateForm)
+    let toggleEditInput = function(e){
+        setOpenUpdateForm(!openUpdateForm)
+        e.preventDefault()
     }
 
 
@@ -288,45 +306,45 @@ const AdminDetails = () => {
             
 
     
-    <dialog className="nes-dialog is-rounded" id="dialog-rounded" 
+    <dialog className="nes-dialog is-rounded" id="admin-main-menu" 
     style={{marginTop: "356px"}}
     >
         <form method="dialog">
         {/* Title! */}
-        <p class="title">Hello Administrator... *wink* *wink*:</p>
+        <p class="title">Hello Administrator... <br/> *wink* *wink*:</p>
         <br/>
         
         {/* Buttons! */}
         
         <p>"Entertaining 1950's Lobotomy Simulators"</p> 
-        <p style={{fontSize:"10px"}}>(Game Library)</p>
+        <p style={{fontSize:"16px", textAlign:"center"}}>(Game Library)</p>
         <br/>
 
         {/* 1 */}
-        <button onclick={openGameLibary}
+        <button onClick={openGameLibary}
         style={{cursor: "pointer", marginLeft: "181px", width:"100px"}}
             className="nes-btn">View</button>
         <br/>
 
         <br/>
         <p style={{marginLeft: "170px"}}>"Mind Lube"</p> 
-        <p style={{fontSize:"10px"}}>(Cartoon Libary)</p>
+        <p style={{fontSize:"16px", textAlign:"center"}}>(Cartoon Libary)</p>
 
         <br />
         {/* 2 */}
     
-        <button onclick={openCartoonLibary}
+        <button onClick={openCartoonLibary}
         style={{cursor: "pointer", marginLeft: "181px", width:"100px"}}
             className="nes-btn">View</button>
         <br />
         <br/>
         <p>"What I Felt Was Inspirational Today..."</p>
-        <p style={{fontSize:"10px"}}>(Magic 8-Ball Library)</p>
+        <p style={{fontSize:"16px", textAlign:"center"}}>(Magic 8-Ball Library)</p>
 
         <br/>
 
         {/* 3 */}
-        <button onclick={openQuotesLibary}
+        <button onClick={openQuotesLibary}
         style={{cursor: "pointer", marginLeft: "181px", width:"100px"}}
             className="nes-btn">View</button>
         <br/>
@@ -339,7 +357,7 @@ const AdminDetails = () => {
             width: "65px",
             height:"65px"
         }}>
-            <img src="../x-btn1.png"/>
+            <img src="../x-btn1.png" alt="close"/>
             
         </button>
         </menu>
@@ -352,30 +370,29 @@ const AdminDetails = () => {
     <div> 
         {/* if error occurs, attempt deleting this outer div wrapper ;P */}
     <section> 
-    <dialog className="nes-dialog is-rounded" id="game-library-window"
+    <dialog className="nes-dialog is-rounded" id="games-library-window"
     style={{marginTop: "356px"}}
     >
         <form method="dialog">
         {/* Title! */}
-        <p class="title">Sleepy?</p>
+        <p class="title">Update Game Info?</p>
         <br/>
 
         {/* ---------View!-------- */}
 
-        {/* start .map() from here -----------------------------------------------------> do all of ur dot maps please. i pulled from newest ruby thing */}
         
         {/* ------Buttons!-------- */}
 
         {/* post, update, delete */}
         <button onClick={toggleNewInput}
-        style={{cursor: "pointer", marginLeft: "181px", width:"100px"}}
+        style={{cursor: "pointer", marginLeft: "11px", width:"481px"}}
             className="nes-btn">Create New!</button>
 
 
         {/* form here */}
         
 
-            {/* ternary to display the form on pop-up/modal */}
+            {/* ternary to display the form */}
         {openCreateForm
                     ?  <form className="nes-field" 
                     onSubmit={handleSubmitGameEntry} 
@@ -397,8 +414,7 @@ const AdminDetails = () => {
                         placeholder="enter name"/>
                         
                     
-
-                    <br/>
+  
                     {/* description */}
                     <label for="description_field">Description?</label>
                     <input 
@@ -444,7 +460,9 @@ const AdminDetails = () => {
             }
         
         {/* form end */}
-
+ {/* start .map() from here -----------------------------------------------------> do all of ur dot maps please. i pulled  */}
+                    <br/>
+                    <br/>
         <button onClick={toggleEditInput}
         style={{cursor: "pointer", marginLeft: "181px", width:"100px"}}
             className="nes-btn">Edit!</button>
@@ -460,18 +478,30 @@ const AdminDetails = () => {
                     // style={{position: "absolute", zIndex: "90", top:"732px"}}
                     >
                         
+                        
                         <br/>
                         {/* link */}
-                    <label for="link_field">iFrame Link?</label>
+                    <label for="link_field">iFrame Link</label>
                     <input 
                     onSubmit={updateGames}
                     
                         id="name_field"
                         
-                        value={updateQuotes.quote}
+                        value={updateGames.link}
                         name="text" 
                         className="nes-input" 
-                        placeholder="Change link"/>
+                        placeholder="New link?"/>   <br/> 
+                        {/*  image */}
+
+                    <label for="name_field">Image Src?</label>
+                    <input 
+                    onSubmit={updateGames}
+                        id="name_field"
+                        
+                        value={updateGames.image}
+                        type="text" 
+                        className="nes-input" 
+                        placeholder="Change img src link:"/>
                     
 
                 
@@ -486,6 +516,8 @@ const AdminDetails = () => {
 
 
             {/* form end */}
+            <br/>
+            <br/>
 
         <button onClick={gameDelete}
         style={{cursor: "pointer", marginLeft: "181px", width:"100px"}}
@@ -501,7 +533,7 @@ const AdminDetails = () => {
             width: "65px",
             height:"65px"
         }}>
-            <img src="../x-btn1.png"/>
+            <img src="../x-btn1.png" alt="close"/>
             </button>
             </menu>
             </form>
@@ -511,12 +543,12 @@ const AdminDetails = () => {
     {/*############################# Cartoon Library Pop-Up ################################## */}
     <div>
     <section> 
-    <dialog className="nes-dialog is-rounded" id="cartoon-library-window"
+    <dialog className="nes-dialog is-rounded" id="cartoons-library-window"
     style={{marginTop: "356px"}}
     >
         <form method="dialog">
         {/* Title! */}
-        <p class="title">Tired?</p>
+        <p class="title">Update Cartoon Info?</p>
         <br/>
 
         {/* ---------View!-------- */}
@@ -527,8 +559,12 @@ const AdminDetails = () => {
 
         {/* post, update, delete */}
         <button onClick={toggleNewInput}
-        style={{cursor: "pointer", marginLeft: "181px", width:"100px"}}
+        style={{cursor: "pointer", marginLeft: "11px", width:"481px"}}
             className="nes-btn">Create New!</button>
+       <br/>
+       <br/>
+    
+
     {/* form here */}
         
 
@@ -594,11 +630,15 @@ const AdminDetails = () => {
                         placeholder="enter img src link:"/>
                     
                     {/* end of form */}
+                    <br/>
+                    <br/>
                     </form>
+                    
 
                     : null
                 
             }
+         
         
         {/*------------- form end-------------- */}
 
@@ -646,6 +686,8 @@ const AdminDetails = () => {
                     : null
                 
             }
+            <br/>
+            <br/>
         <button onClick={cartoonDelete}
         style={{cursor: "pointer", marginLeft: "181px", width:"100px"}}
             className="nes-btn">Delete!</button>
@@ -660,7 +702,7 @@ const AdminDetails = () => {
             width: "65px",
             height:"65px"
         }}>
-            <img src="../x-btn1.png"/>
+            <img src="../x-btn1.png" alt="close"/>
             </button>
             </menu>
             </form>
@@ -678,7 +720,8 @@ const AdminDetails = () => {
     >
         <form method="dialog">
         {/* Title! */}
-        <p class="title">Hungry?</p>
+        <p class="title">Update Quotes Info?</p>
+        <br/>
         <br/>
 
         {/* ---------View!-------- */}
@@ -689,8 +732,10 @@ const AdminDetails = () => {
 
         {/* post, update, delete */}
         <button onClick={toggleNewInput}
-        style={{cursor: "pointer", marginLeft: "181px", width:"100px"}}
+        style={{cursor: "pointer", marginLeft: "11px", width:"481px"}}
             className="nes-btn">Create New!</button>
+          
+            <br/>
 
     {/* form here */}
         
@@ -705,7 +750,7 @@ const AdminDetails = () => {
                     >
 
 
-                        <br/> 
+                       
                         {/* quote */}
                     <label for="name_field">Title?</label>
                     <input 
@@ -727,6 +772,8 @@ const AdminDetails = () => {
                         type="text" 
                         className="nes-input" 
                         placeholder="enter link"/>
+                        <br/>
+                        
                         </form></> 
                     
 
@@ -736,7 +783,8 @@ const AdminDetails = () => {
         
         {/* form end */}
                     
-
+  
+        <br/>
         <button onClick={toggleEditInput}
         style={{cursor: "pointer", marginLeft: "181px", width:"100px"}}
             className="nes-btn">Edit!</button>
@@ -754,7 +802,7 @@ const AdminDetails = () => {
 
                     
 
-                        <br/>
+                      
                         {/*  link */}
                     <label for="link_field">iFrame Link?</label>
                     <input 
@@ -766,11 +814,14 @@ const AdminDetails = () => {
                         placeholder="Change link"/>
                     
                     {/* end of form */}
+                  
+                    
                     </form></>
 
                     : null
                 
             }
+            <br/><br/>
 
         <button onClick={quoteDelete}
         style={{cursor: "pointer", marginLeft: "181px", width:"100px"}}
@@ -786,7 +837,7 @@ const AdminDetails = () => {
             width: "65px",
             height:"65px"
         }}>
-            <img src="../x-btn1.png"/>
+            <img src="../x-btn1.png" alt="close"/>
             </button>
             </menu>
             </form>
@@ -794,7 +845,7 @@ const AdminDetails = () => {
         </section>
     </div>
     {/* ################################################################################### */}
-
+hi NOO WAYYYY!
     </>
 
 
@@ -803,5 +854,5 @@ const AdminDetails = () => {
 
 )
 
-} }
+} 
 export default AdminDetails

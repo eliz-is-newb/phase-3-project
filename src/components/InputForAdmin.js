@@ -13,7 +13,7 @@ const InputForAdmin = ({adminInput, setAdminInput}) => {
     let checkIfTrue = function (e) {
         e.preventDefault()
         if (adminInput === "unicorns") {
-            document.getElementById('dialog-rounded').showModal()
+            document.getElementById('admin-main-menu').showModal()
         } else (document.getElementById("admin-input-div").placeholder = "wrong password")
                 setAdminInput(e.target.reset()) }
 
@@ -29,6 +29,7 @@ return (
     {/* ternary for display on mouse click */}
     <form id="admin-input-div" className="nes-field" 
     onSubmit={checkIfTrue}
+    onChange={handleInputChange}
     style={{position: "absolute", zIndex: "90", top:"732px"}}>
     <label for="name_field"></label>
     <input 
@@ -54,7 +55,7 @@ return (
 
 
             {/* Admin Details Pop-up */}
-            {/* <AdminDetails adminInput={adminInput} setAdminInput={setAdminInput} /> */}
+            <AdminDetails />
             <div id="input-container">
             
             </div>

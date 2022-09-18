@@ -33,6 +33,10 @@ const Home = () => {
     let handleClick2 = function(){
         document.getElementById('magic8ball').showModal()
     }
+    // if input for admin box is true, show 'admin' .showModal (global)
+    // onSubmit 
+    // if not true, clear box and display placeholder text 
+     
 
 
 

@@ -19,7 +19,7 @@ function App() {
           <Route exact key={4}    path="/testelementspage" element={<TestElementsPage />}/>
           <Route exact key={5}    path="/cartoonlibrary"   element={<CartoonLibrary />}/>
           <Route exact key={6}    path="/quoteslibrary"   element={<QuotesLibrary />}/>
-          {/* <Route exact key={7}    path="/admin"           element={<AdminDetails />}/> */}
+          <Route exact key={7}    path="/admin"           element={<AdminDetails />}/>
           </Routes> 
       </Router>
     </div>
