@@ -9,7 +9,7 @@ This project is a multi-media platform that replicates a gameboy emulator.
 - A user can browse through and play cartoons, games, and commercials.  
 - An admin can perform CRUD actions through the admin menu. 
 	- To travel to this window, click the lock button in the corner of the home screen. 
-	<br/> <br/>
+	
 	<img src="https://www.linkpicture.com/q/Screen-Shot-2022-09-18-at-1.32.58-PM.png"/>
 	The admin controls and menu are password-protected. 
 	Since, for now, this is a project required for our Phase 3, we don't mind sharing the 
@@ -17,6 +17,7 @@ This project is a multi-media platform that replicates a gameboy emulator.
 	<img src="https://www.linkpicture.com/q/Screen-Shot-2022-09-18-at-1.36.10-PM.png"/>
 	<br/> <br/>
 	 Here, a user can view, add, edit, or delete entries in any of the libraries available. 
+	 <img src="https://www.linkpicture.com/q/Screen-Shot-2022-09-18-at-5.56.34-PM.png"/>
 
 ### A snippet from our about react app: 
 We discovered ways to display games from websites hosting independently-made games, using their web embedded iframe links, itch.io, and independent streaming websites such as bumpworthy.com, and kimcartoons.to, to fulfill our libraries. To access these links for any other admin, a tutorial for how to use inspect on these specific pages would be required. 
