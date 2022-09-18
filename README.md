@@ -1,6 +1,3 @@
-"Balancing Limbo" is a multi-media platform, gameboy advance simulator. 
-- It contains three libraries of curated cartoons, games, and funny commercial-quotes styled as magic 8 ball answers. 
-
 # Balancing Limbo
 
 This project was manufactured with React, JSX, (Bulma.io CSS, NES.css) frameworks, external iframes and a lot of fun content to work with, and browse through. 
