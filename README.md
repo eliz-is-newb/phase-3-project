@@ -7,9 +7,13 @@ This project was manufactured with React, JSX, (Bulma.io CSS, NES.css) framework
 This project is a multi-media platform that replicates a gameboy emulator. 
 - It contains three libraries of curated cartoons, games, and funny commercial-quotes styled as magic 8 ball answers. 
 - A user can browse through and play cartoons, games, and commercials.  
-- An admin can perform CRUD actions through the use of the password, "unicorns", by clicking on this button, 
+- An admin can perform CRUD actions through the admin menu. 
+	- To travel to this window, click the lock button in the corner of the home screen. 
 	<br/> <br/>
 	<img src="https://www.linkpicture.com/q/Screen-Shot-2022-09-18-at-1.32.58-PM.png"/>
+	The admin controls and menu are password-protected. 
+	Since, for now, this is a project required for our Phase 3, we don't mind sharing the 
+	admin password on this github (for now). It's "unicorns". 
 	<img src="https://www.linkpicture.com/q/Screen-Shot-2022-09-18-at-1.36.10-PM.png"/>
 	<br/> <br/>
 	 Here, a user can view, add, edit, or delete entries in any of the libraries available. 
