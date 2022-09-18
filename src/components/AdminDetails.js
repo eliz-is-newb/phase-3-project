@@ -736,6 +736,7 @@ const AdminDetails = ({adminInput, setAdminInput}) => {
             className="nes-btn">Create New!</button>
           
             <br/>
+            
 
     {/* form here */}
         
@@ -750,7 +751,8 @@ const AdminDetails = ({adminInput, setAdminInput}) => {
                     >
 
 
-                       
+                       <br/>
+                      
                         {/* quote */}
                     <label for="name_field">Title?</label>
                     <input 
