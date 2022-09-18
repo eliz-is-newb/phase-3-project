@@ -7,10 +7,12 @@ This project was manufactured with React, JSX, (Bulma.io CSS, NES.css) framework
 This project is a multi-media platform that replicates a gameboy emulator. 
 - It contains three libraries of curated cartoons, games, and funny commercial-quotes styled as magic 8 ball answers. 
 - A user can browse through and play cartoons, games, and commercials.  
-- An admin can perform CRUD actions through the use of the password, "unicorns", by clicking on this button, <br/>
+- An admin can perform CRUD actions through the use of the password, "unicorns", by clicking on this button, 
+	<br/> <br/>
 	<img src="https://www.linkpicture.com/q/Screen-Shot-2022-09-18-at-1.32.58-PM.png"/>
 	<img src="https://www.linkpicture.com/q/Screen-Shot-2022-09-18-at-1.36.10-PM.png"/>
-	 , to view, add, edit, or delete entries in any of the libraries available. 
+	<br/> <br/>
+	 Here, a user can view, add, edit, or delete entries in any of the libraries available. 
 
 ### A snippet from our about react app: 
 We discovered ways to display games from websites hosting independently-made games, using their web embedded iframe links, itch.io, and independent streaming websites such as bumpworthy.com, and kimcartoons.to, to fulfill our libraries. To access these links for any other admin, a tutorial for how to use inspect on these specific pages would be required. 
