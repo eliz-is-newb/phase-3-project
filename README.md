@@ -33,9 +33,9 @@ Balancing Limbo presents as an interesting, stylish platform, to play mini games
 
 <br/>
 
-## `Components Carrying out our Requests/API Routes `
+## `Diagram of Our Component Tree: Carrying out our Requests/API Routes `
 <br/>
-<img src="https://www.linkpicture.com/q/Screen-Shot-2022-09-18-at-2.07.35-PM.png"/>
+<img src="https://www.linkpicture.com/q/Screen-Shot-2022-09-19-at-5.43.35-PM.png"/>
 
 <br/>
 <br/> 
