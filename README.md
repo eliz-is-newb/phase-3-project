@@ -13,11 +13,7 @@ This project is a multi-media platform that replicates a gameboy emulator.
 	
 	<img src="https://www.linkpicture.com/q/Screen-Shot-2022-09-18-at-1.32.58-PM.png"/>
 	<br/><br/>
-	The admin controls and menu are password-protected. 
-	Since, for now, this is a project required for our Phase 3, <br/>
-	we don't mind sharing the 
-	admin password on this github. 
-	# `It's "unicorns".` 
+	The admin controls are public access (not password protected) at the moment due to out-of-reach tech. 
 	<br/><br/>
 	<img src="https://www.linkpicture.com/q/Screen-Shot-2022-09-18-at-1.36.10-PM.png"/>
 	<br/> <br/>
@@ -26,7 +22,7 @@ This project is a multi-media platform that replicates a gameboy emulator.
 ### A snippet speaking on our new tech we used for our react+ruby web app: 
 We discovered ways to display games from websites hosting independently-made games, using their web embedded iframe links, itch.io, and independent streaming websites such as bumpworthy.com, and kimcartoons.to, to fulfill our libraries. 
 <br/>
-Balancing Limbo presents as an interesting, stylish platform, to play mini games, watch cartoons, and see random commercials, in such a way that is perfected for the average, bored and nostalgic-loving, burnt-out coder. 
+Balancing Limbo presents as an interesting, stylish platform, to play mini games, watch cartoons, and see random commercials, in such a style that is perfected for the average, bored and nostalgic-loving, burnt-out coder. 
 <br/>
 
 ### `Diagram of Our Component Tree `
@@ -58,5 +54,5 @@ Balancing Limbo presents as an interesting, stylish platform, to play mini games
 ## `Our Three Stretch Goals `
 <p>1. Getting all of our libraries to successfully interact with the iframes</p>
 <p>2. Having our app scale with the browser window</p>
-<p>3. Finishing in time with the deadline.</p> 
+<p>3. Getting our CRUD to successfully run.</p> 
 
