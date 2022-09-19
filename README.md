@@ -13,7 +13,7 @@ This project is a multi-media platform that replicates a gameboy emulator.
 	
 	<img src="https://www.linkpicture.com/q/Screen-Shot-2022-09-18-at-1.32.58-PM.png"/>
 	<br/><br/>
-	The admin controls are to public at the moment due to out-of-reach tech. 
+	The admin controls are public access (not password protected) at the moment due to out-of-reach tech. 
 	<br/><br/>
 	<img src="https://www.linkpicture.com/q/Screen-Shot-2022-09-18-at-1.36.10-PM.png"/>
 	<br/> <br/>
