@@ -7,6 +7,9 @@ import TestElementsPage from "./components/TestElementsPage";
 import CartoonLibrary from "./components/CartoonLibrary";
 import QuotesLibrary from "./components/QuotesLibrary";
 import AdminDetails from "./components/AdminDetails";
+import GamesContainer from "./components/GamesContainer";
+import CartoonsContainer from "./components/CartoonsContainer";
+import QuotesContainer from "./components/QuotesContainer";
 
 function App() {
   return (
@@ -20,6 +23,10 @@ function App() {
           <Route exact key={5}    path="/cartoonlibrary"   element={<CartoonLibrary />}/>
           <Route exact key={6}    path="/quoteslibrary"   element={<QuotesLibrary />}/>
           <Route exact key={7}    path="/admin"           element={<AdminDetails />}/>
+          <Route exact key={8}    path="/admin-gamelibrary"           element={<GamesContainer />}/>
+          <Route exact key={9}    path="/admin-cartoonlibrary"           element={<CartoonsContainer />}/>
+          <Route exact key={10}   path="/admin-quoteslibrary"           element={<QuotesContainer />}/>
+
           </Routes> 
       </Router>
     </div>

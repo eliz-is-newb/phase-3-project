@@ -1,72 +1,60 @@
-# Getting Started with Create React App
+# Balancing Limbo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was manufactured with React, JSX, (Bulma.io CSS, NES.css) frameworks, external iframes and a lot of fun content to work with, and browse through. 
 
-## Available Scripts
 
-In the project directory, you can run:
+## What is it?
+This project is a multi-media platform that replicates a gameboy emulator. <br/>
+<br/> To get to home screen: Press power button on gameboy IMG. 
 
-### `npm start`
+- It contains three libraries of curated cartoons, games, and funny commercial-quotes styled as magic 8 ball answers. 
+- A user can browse through and play cartoons, games, and commercials.  
+- An admin can perform CRUD actions through the admin menu. 
+	- To travel to there, click the lock button in the corner of the home screen. 
+	<br/><br/>
+	
+	<img src="https://www.linkpicture.com/q/Screen-Shot-2022-09-18-at-1.32.58-PM.png"/>
+	<br/><br/>
+	The admin controls are public access (not password protected) at the moment due to out-of-reach tech. 
+	<br/><br/>
+	<img src="https://www.linkpicture.com/q/Screen-Shot-2022-09-18-at-1.36.10-PM.png"/>
+	<br/> <br/>
+	<img src="https://www.linkpicture.com/q/Screen-Shot-2022-09-18-at-5.56.34-PM.png"/>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### A snippet speaking on our new tech we used for our react+ruby web app: 
+We discovered ways to display games from websites hosting independently-made games, using their web embedded iframe links, itch.io, and independent streaming websites such as bumpworthy.com, and kimcartoons.to, to fulfill our libraries. 
+<br/>
+Balancing Limbo presents as an interesting, stylish platform, to play mini games, watch cartoons, and see random commercials, in such a style that is perfected for the average, bored and nostalgic-loving, burnt-out coder. 
+<br/>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `Diagram of Our Component Tree `
+<br/>
+<img src="https://www.linkpicture.com/q/Screen-Shot-2022-09-18-at-1.51.33-PM.png"/>
 
-### `npm test`
+<br/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## `Components Carrying out our Requests/API Routes `
+<br/>
+<img src="https://www.linkpicture.com/q/Screen-Shot-2022-09-18-at-2.07.35-PM.png"/>
 
-### `npm run build`
+<br/>
+<br/> 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## `Captures of our API Routes `
+<img src="https://www.linkpicture.com/q/Screen-Shot-2022-09-18-at-2.19.26-PM.png"/>
+<br/>
+<br/> 
+### `Captures of our schema.rb `
+<img src="https://www.linkpicture.com/q/diagram_1.png"/>
+<br/>
+<br/> 
+## `Captures of our schema.rb `
+<img src="https://www.linkpicture.com/q/schema.png"/>
+<br/>
+<br/> 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## `Our Three Stretch Goals `
+<p>1. Getting all of our libraries to successfully interact with the iframes</p>
+<p>2. Having our app scale with the browser window</p>
+<p>3. Getting our CRUD to successfully run.</p> 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# balancing-limbo
-# phase-3-project

@@ -33,7 +33,7 @@ useEffect(() => {
     getData() 
 }, []) 
 return (
-
+<>
     <div id="gameslibrary-bg">
             <div id="test"> 
     <ResizableBox style={{marginLeft: "184px"}} width={1000} height={100} draggableOpts={{grid: [25, 25]}}
@@ -211,6 +211,7 @@ return (
      </div>
 
 </div>
+</>
 )
 
 } 

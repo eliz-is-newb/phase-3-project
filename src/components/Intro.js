@@ -88,7 +88,7 @@ return (
                     backgroundColor:"white", 
                     zIndex: "0",
                     top: "156px",
-                    right: "-346px",
+                    right: "-235px",
                     height: "196px",
                     width: "350px",
                     fontSize: "18px"
@@ -113,12 +113,12 @@ return (
                 </Columns.Column>
                 <Columns.Column size={1}>
                 <div className="nes-container is-rounded" id="text2" style={{ color: "black", backgroundColor:"white", zIndex: "0"}}>
-                    <p>Well... there's no one around, I guess it's mine now.</p>
+                    <p>huh... interesting. I wonder if it's charged.</p>
                 </div> 
                 {/* 2 */}
                 
                 <div className="nes-container is-rounded" id="text2a" style={{ color: "black", backgroundColor:"white", zIndex: "0"}}>
-                    <p>Am I stoned? ... one minute I'm trying to escape programming hell, counting change for my fifth redbull run... and suddenly this f**kin' device ... an old gameboy just falls right into my hands. </p>
+                    <p> * A random gameboy has fallen from the heavens and has been sitting on the roof of this gas pit stop for couple months now. Out of some odd luck, while escaping your den of programming hell, it has fallen into your hands.* </p>
                 </div> 
 
                 {/* bggb img helper */}
