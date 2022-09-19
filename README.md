@@ -15,11 +15,11 @@ This project is a multi-media platform that replicates a gameboy emulator. <br/>
 	
 	<img src="https://www.linkpicture.com/q/Screen-Shot-2022-09-18-at-1.32.58-PM.png"/>
 	<br/><br/>
-	The admin controls are public access (not password protected) at the moment due to out-of-reach tech. 
+	The admin controls are public access (not password protected) at the moment due to beta-testing tech. 
 	<br/><br/>
 	<img src="https://www.linkpicture.com/q/Screen-Shot-2022-09-18-at-1.36.10-PM.png"/>
 	<br/> <br/>
-	<img src="https://www.linkpicture.com/q/Screen-Shot-2022-09-18-at-5.56.34-PM.png"/>
+
 
 ### A snippet speaking on our new tech we used for our react+ruby web app: 
 We discovered ways to display games from websites hosting independently-made games, using their web embedded iframe links, itch.io, and independent streaming websites such as bumpworthy.com, and kimcartoons.to, to fulfill our libraries. 
