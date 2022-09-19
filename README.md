@@ -25,8 +25,8 @@ is available on our external github repository, which is sourced on rails. local
 
 
 ### A snippet speaking on our new tech we used for our react+ruby web app: 
-We discovered ways to display games from websites hosting independently-made games, using their web embedded iframe links, itch.io, and independent streaming websites such as bumpworthy.com, and kimcartoons.to, to fulfill our libraries. 
-<br/>
+We discovered ways to display games from websites hosting independently-made games, using their web embedded iframe links, itch.io, and independent streaming websites such as bumpworthy.com, and kimcartoons.to, to fill our libraries. 
+<br/><br/>
 Balancing Limbo presents as an interesting, stylish platform, to play mini games, watch cartoons, and see random commercials, in such a style that is perfected for the average, bored and nostalgic-loving, burnt-out coder. 
 <br/>
 
@@ -51,12 +51,12 @@ Balancing Limbo presents as an interesting, stylish platform, to play mini games
 <img src="https://www.linkpicture.com/q/diagram_1.png"/>
 <br/>
 <br/> 
-## `Captures of our schema.rb `
+## Captures of our schema.rb 
 <img src="https://www.linkpicture.com/q/schema.png"/>
 <br/>
 <br/> 
 
-## `Our Three Stretch Goals `
+## Our Three Stretch Goals 
 <p>1. Getting all of our libraries to successfully interact with the iframes</p>
 <p>2. Having our app scale with the browser window</p>
 <p>3. Getting our CRUD to successfully run.</p> 
