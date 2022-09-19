@@ -2,7 +2,7 @@
 
 This project was manufactured with React, JSX, (Bulma.io CSS, NES.css) frameworks, external iframes and a lot of fun content to work with, and browse through. 
 ## To get to our app's home screen: 
-Press power button on gameboy image. 
+Press the power button on gameboy image. 
 
 
 ## What is Balancing Limbo?
