@@ -2,6 +2,8 @@ import React from "react";
 import { useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import './FTFY.css';
+import CartoonsCard from "./CartoonsCard";
+
 function CartoonsContainer() {
 
  // FETCH : GET #########################################
@@ -33,7 +35,10 @@ function CartoonsContainer() {
 
     const [newChange, setNewChange] = useState({
         name: "", 
-        description: ""
+        description: "",
+        link1: "",
+        link2: "",
+        link3: ""
     })
 
     // updating database ------------------------------------------
@@ -109,7 +114,7 @@ function CartoonsContainer() {
     //// for css 
     const [openCreateForm, setOpenCreateForm] = useState(false) // post //defined inside regular function, have to be defined inside of a functional component
 
-    const [openUpdateForm, setOpenUpdateForm] = useState(false) // update 
+    // const [openUpdateForm, setOpenUpdateForm] = useState(false) // update 
 
     let toggleNewInput = function(e){
         // these are onSubmits to close the forms after submit 
@@ -117,17 +122,17 @@ function CartoonsContainer() {
         e.preventDefault()
     }
 
-    let toggleEditInput = function(e){
-        setOpenUpdateForm(!openUpdateForm)
-        e.preventDefault()
-    }
+    // let toggleEditInput = function(e){
+    //     setOpenUpdateForm(!openUpdateForm)
+    //     e.preventDefault()
+    // }
 
 
   return (
     <div >
     <section> 
     <div id="cartoons-library-window"
-    style={{marginTop: "10%", marginRight: "10%", width:"700px", overflow:"auto", marginLeft: "0%", marginBottom:"500px"}}
+    style={{marginTop: "10%", marginRight: "10%", width:"700px", overflow:"auto", marginLeft: "0%", marginBottom:"50px"}}
     >
         <div method="dialog">
         {/* Title! */}
@@ -144,7 +149,7 @@ function CartoonsContainer() {
         {/* post, update, delete */}
         <button onClick={toggleNewInput}
         style={{cursor: "pointer", marginLeft: "105px", width:"481px"}}
-            className="nes-btn">Create New!</button>
+            className="nes-btn is-primary">Create New!</button>
        <br/>
        <br/>
     
@@ -232,92 +237,25 @@ function CartoonsContainer() {
                     : null
                 
             }
-         
-        
         {/*------------- form end-------------- */}
 
+ {/* start .map() from here -----------------------------------------------------> do all of ur dot maps please. i pulled  */}
+
         {cartoonsData.map(cartoon => {
-            return (
-        <div id="admin-cartoon-card" key={cartoon.id}
-        style={{overflow:"scroll"}}
-        >
-                    <br/>
-                    <br/>
-                {/* cartoon img and cartoon name */}
-                <img 
-                style={{width:"400px", marginLeft:"141px"}}
-                src={cartoon.image} alt="game image"/>
-                <p className="nes-badge is-snapchat"
-                style={{textAlign:"center", marginLeft:"141px"}}
-                >{cartoon.name}</p>
-                    <br/>
-        <button onClick={toggleEditInput}
-        style={{cursor: "pointer", marginLeft: "147px", width:"250px", marginTop:"-2px", fontSize:"18px", marginBottom:"0px"}}
-            className="nes-btn">Edit!</button>
-            {/* ---------form here--------------- */}
+            return ( 
 
-
-            {/* ternary to display the form on pop-up/modal */}
-            {openUpdateForm
-                    ?  <form className="nes-field" 
-                    onChange={addNewChanges} //patch
-                    onSubmit={(e)=>handleUpdate(e, cartoon.id)} //patch
-
-                    
-                    // style={{position: "absolute", zIndex: "90", top:"732px"}}
-                    >
-                        
-                        <br/> 
-                        {/* name */}
-                    <label for="name_field">Name?</label>
-                    <input 
-            
-                        id="name_field"
-                        name="name"
-                        value={newChange.name}
-                        type="text" 
-                        className="nes-input" 
-                        placeholder="New name?"/>
-                        
-                    
-
-                    <br/>
-                    {/* description */}
-                    <label for="description_field">Description?</label>
-                    <input 
-                
-                        id="name_field"
-                        name="description"
-                        value={newChange.description}
-                        type="text" 
-                        className="nes-input" 
-                        placeholder="New description?"/>
-                        
-
-                        <br/>
-                        <button className="nes-btn" type="submit"> submit </button>
-                    {/* end of form */}
-                    </form>
-
-                    : null
-                
-            }
-           
-            <button onClick={()=>handleDelete(cartoon.id)}        
-               style={{cursor: "pointer",  marginLeft: "415px", width:"120px", fontSize:"18px",marginTop:"-67px"}}
-            className="nes-btn">Delete!</button>
-             <br/>
-            <br/>
-
-            
-            </div>
+                <>
+                <CartoonsCard cartoonsData={cartoonsData} handleUpdate={handleUpdate} 
+        newChange={newChange} handleDelete={handleDelete} addNewChanges={addNewChanges}
+        cartoon={cartoon}/>
+                </>
             )})}
+        
         {/* end .map() from here */}
 
-
-            </div>
-        </div>
-        </section>
+    </div>
+    </div>
+    </section>
     </div>
     
   );

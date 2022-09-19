@@ -3,6 +3,7 @@ import { useEffect, useState} from "react";
 import AdminDetails from "./AdminDetails";
 import { Link } from "react-router-dom";
 import './FTFY.css';
+import GamesCard from "./GamesCard";
 
 function GamesContainer({}) {
 
@@ -136,7 +137,7 @@ console.log(gamesData)
 
     <section> 
     <div className="" id="games-library-window"
-    style={{marginTop: "10%", marginRight: "10%", width:"700px", overflow:"auto", marginLeft: "0%", marginBottom:"500px"}}
+    style={{marginTop: "10%", marginRight: "10%", width:"700px", overflow:"auto", marginLeft: "0%", marginBottom:"50px"}}
     >
         <div method="dialog">
         {/* Title! */}
@@ -153,7 +154,7 @@ console.log(gamesData)
         {/* post, update, delete */}
         <button onClick={toggleNewInput}
         style={{cursor: "pointer", marginLeft: "105px", width:"481px"}}
-            className="nes-btn">Create New!</button>
+            className="nes-btn is-primary">Create New!</button>
 
 
         {/* form here */}
@@ -235,101 +236,26 @@ console.log(gamesData)
         {/* form end */}
 
  {/* start .map() from here -----------------------------------------------------> do all of ur dot maps please. i pulled  */}
-        {gamesData.map(game => {
+           
+            {gamesData.map(game => {
             return ( 
-        <div id="admin-game-card" key={game.id} 
-        style={{overflow:"scroll"}}
-        >
-                    <br/>
-                    <br/>
-                   
-                {/* game img and game name */}
-                
-                <img 
-                style={{width:"400px", marginLeft:"141px"}}
-                src={game.image} alt="game image"/>
-                <p className="nes-badge is-snapchat"style={{textAlign:"center", marginLeft:"141px"}}>{game.name}</p>
-                <br/>
-        <button className="nes-btn" onClick={toggleEditInput}
-        style={{cursor: "pointer", marginLeft: "147px", width:"250px", marginTop:"-2px", fontSize:"18px", marginBottom:"0px"}}
-            className="nes-btn">Edit!</button>
-            
-            {/* form here */}
 
-
-            {/* ternary to display the form on pop-up/modal - change to openUpdateForm */} 
-            {openUpdateForm
-                    ?  <form className="nes-field" 
-                    onSubmit={(e)=>handleUpdate(e,game.id)} //patch
-                    onChange={addNewChanges} //patch
-                    // change this submit 
-                    // style={{position: "absolute", zIndex: "90", top:"732px"}}
-                    >
-                        
-                        
-                        <br/>
-                        {/* Name */}
-                    <label for="link_field">Name?</label>
-                    <input 
-                    
-                    
-                        id="name_field"
-                        
-                        name="name"
-                        value={newChange.name}
-                        type="text" 
-                        className="nes-input" 
-                        placeholder="New name?"/>  
-                         <br/> 
-                
-                        {/*  image */}
-
-                    <label for="name_field">Image Src?</label>
-                    <input 
-                        id="name_field"
-                        
-                        name="image"
-                        value={newChange.image}
-                        type="text" 
-                        className="nes-input" 
-                        placeholder="Change img src link:"/>
-                    
-
-                    <br/>
-                  
-                    <button className="nes-btn" type="submit"> submit </button>
-                    
-                    {/* end of form */}
-                    </form>
-
-                    : null
-                
-            }
-        
-
-
-            {/* form end */}
-            
-           
-        <button onClick={()=>handleDelete(game.id)}
-        style={{cursor: "pointer",  marginLeft: "415px", width:"120px", fontSize:"18px",marginTop:"-67px"}}
-            className="nes-btn">Delete!</button>
-            <br/>
-            <br/>
-
-        </div>
+                <>
+                <GamesCard gamesData={gamesData} handleUpdate={handleUpdate} 
+        newChange={newChange} handleDelete={handleDelete} addNewChanges={addNewChanges}
+        game={game}/>
+                </>
             )})}
+        
         {/* end .map() from here */}
-    
-       
-         
-            </div>
-           
-        </div>
-        </section>
-         
+
     </div>
+    </div>
+    </section>
+    </div>
+    
   );
+    
 }
 
 export default GamesContainer;

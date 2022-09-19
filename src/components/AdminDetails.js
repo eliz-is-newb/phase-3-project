@@ -83,7 +83,7 @@ const AdminDetails = ({ }) => {
     <button className="nes-btn"
     style={{
         cursor: "pointer", 
-        marginTop: "-1177px",
+        marginTop: "-277px",
         marginLeft: "596px",
         width: "65px",
         height:"65px"
@@ -101,7 +101,7 @@ const AdminDetails = ({ }) => {
     <button className="nes-btn"
     style={{
         cursor: "pointer", 
-        marginTop: "-1177px",
+        marginTop: "-277px",
         marginLeft: "596px",
         width: "65px",
         height:"65px"
@@ -120,7 +120,7 @@ const AdminDetails = ({ }) => {
     <button className="nes-btn"
     style={{
         cursor: "pointer", 
-        marginTop: "-1177px",
+        marginTop: "-277px",
         marginLeft: "596px",
         width: "65px",
         height:"65px"
