@@ -24,7 +24,7 @@ This project is a multi-media platform that replicates a gameboy emulator. <br/>
 	<br/> <br/>
 	
 ### Our Backend Server 
-is available on our external github repository, which is sourced on rails. localhost 3000. [https://github.com/eliz-is-newb/anime-project](Here.)
+is available on our external github repository, which is sourced on rails. localhost 3000. [Link to our repository.](https://github.com/eliz-is-newb/anime-project)
 
 
 ### A snippet speaking on our new tech we used for our react+ruby web app: 
