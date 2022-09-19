@@ -72,7 +72,7 @@ return (
                     backgroundColor:"black", 
                     zIndex: "5", 
                     border: "2px solid white",
-                    top: "537px",
+                    top: "720px",
                     right: "-1259px",
                     height: "135px",
                     width: "313px",
@@ -87,8 +87,8 @@ return (
                     color: "black", 
                     backgroundColor:"white", 
                     zIndex: "0",
-                    top: "156px",
-                    right: "-235px",
+                    top: "350px",
+                    right: "-80%",
                     height: "196px",
                     width: "350px",
                     fontSize: "18px"
@@ -128,6 +128,21 @@ return (
                 </Columns.Column>
             </Columns.Column>
             <Columns.Column size={8}>
+            <div className="nes-container" 
+                style={{ 
+                    padding: "12px",
+                    color: "white", 
+                    backgroundColor:"black", 
+                    zIndex: "5", 
+                    border: "2px solid white",
+                    top: "880px",
+                    right: "-1259px",
+                    height: "135px",
+                    width: "313px",
+                    fontSize: "18px"
+                    }}>
+                    <p>Welcome to "Balancing Limbo". Heh. Or the local 7/11's.</p>
+                </div>
                 <div id="control">
                  
                  {/* Nav Link Path! */}

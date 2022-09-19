@@ -21,8 +21,16 @@ const AdminDetails = ({ }) => {
 
     // admin menu set up: -- these are onClicks to open pop-ups 
 
-    let hello = function(){
-        document.getElementById('admin-main-menu').showModal()
+    let games = function(){
+        document.getElementById('games-div').showModal()
+    }
+
+    let cartoons = function(){
+        document.getElementById('cartoons-div').showModal()
+    }
+
+    let quotes = function(){
+        document.getElementById('quotes-div').showModal()
     }
 
     // this page should contain:
@@ -41,88 +49,88 @@ const AdminDetails = ({ }) => {
         <>
     {/* ############################ Admin Menu in Pop-Up ############################### */}
 
-    <button onClick={hello}
+    {/* <button onClick={hello}
         style={{cursor: "pointer", marginLeft: "10%", marginTop:"4%", width:"50%"}}
-            className="nes-btn">Hello Admin, Click for Directory</button>
+            className="nes-btn">Hello Admin, Click for Directory</button> */}
+
+
+    <button onClick={games}
+        style={{cursor: "pointer", marginLeft: "10%", marginTop:"8%", width:"50%"}}
+            className="nes-btn">games folder</button>
+
     
-    <section>
+    <button onClick={cartoons}
+        style={{cursor: "pointer", marginLeft: "10%", marginTop:"8%", width:"50%"}}
+            className="nes-btn">cartoons folder</button>
+
+
+    <button onClick={quotes}
+        style={{cursor: "pointer", marginLeft: "10%", marginTop:"8%", width:"50%"}}
+            className="nes-btn">quotes folder</button>
+    
+  
 
             
 
-    
-    <dialog className="nes-dialog is-rounded" id="admin-main-menu" 
-    style={{marginTop: "356px"}}
-    >
-        <form method="dialog">
-        {/* Title! */}
-        <p class="title">Menu</p>
-        <br/>
-        
-        {/* Buttons! */}
-        <p>"Entertaining 1950's Lobotomy Simulators"</p> 
-        <p style={{fontSize:"16px", textAlign:"center"}}>(Game Library)</p>
-        <br/>
-
-        {/* 1 */}
-       
-        <Link to="/admin-gamelibrary"
-        style={{cursor: "pointer", marginLeft: "181px", width:"100px"}}
-            className="nes-btn">View</Link>
-        <br/>
-
-        <br/>
-        <p style={{marginLeft: "170px"}}>"Mind Lube"</p> 
-        <p style={{fontSize:"16px", textAlign:"center"}}>(Cartoon Libary)</p>
-
-        <br />
-        {/* 2 */}
-
-        
-        <Link to="/admin-cartoonlibrary"
-        style={{cursor: "pointer", marginLeft: "181px", width:"100px"}}
-            className="nes-btn">View</Link>
-        <br />
-        <br/>
-        <p>"What I Felt Was Inspirational Today..."</p>
-        <p style={{fontSize:"16px", textAlign:"center"}}>(Magic 8-Ball Library)</p>
-
-        <br/>
-    
-        {/* 3 */}
-
-      
-        <Link to="/admin-quoteslibrary"
-        style={{cursor: "pointer", marginLeft: "181px", width:"100px"}}
-            className="nes-btn">View</Link>
-        <br/>
-        <br/>
-        <menu className="dialog-menu">
-            <button style={{
-            cursor: "pointer", 
-            marginTop: "-40px",
-            marginLeft: "334px",
-            width: "65px",
-            height:"65px"
-        }}>
-           <Link to="/admin"> <img src="../x-btn1.png" alt="close"/> </Link>
-            
-        </button>
-        </menu>
-        </form>
-    </dialog>
-    </section>
     {/* ################################### End ########################################### */}
 
     {/*############################# Game Library Pop-Up ################################## */}
-    <GamesContainer />
+  
+    <dialog className="nes-dialog is-rounded" id="games-div">
+    <GamesContainer/>
+    <form method="dialog">
+    <menu class="dialog-menu">
+    <button className="nes-btn"
+    style={{
+        cursor: "pointer", 
+        marginTop: "-277px",
+        marginLeft: "596px",
+        width: "65px",
+        height:"65px"
+    }}
+    > <img src="../x-btn1.png" alt="close"/> </button>
+    </menu> 
+    </form>
+    </dialog>
+
     {/*############################# Cartoon Library Pop-Up ################################## */}
+    <dialog className="nes-dialog is-rounded" id="cartoons-div">
     <CartoonsContainer />
+    <form method="dialog">
+    <menu class="dialog-menu">
+    <button className="nes-btn"
+    style={{
+        cursor: "pointer", 
+        marginTop: "-277px",
+        marginLeft: "596px",
+        width: "65px",
+        height:"65px"
+    }}
+    > <img src="../x-btn1.png" alt="close"/> </button>
+    </menu> 
+    </form>
+    </dialog>
     {/* /* ###################################################################################  */}
 
     {/*############################# Quotes Library Pop-Up ############################ */}
+    <dialog className="nes-dialog is-rounded" id="quotes-div">
     <QuotesContainer />
+    <form method="dialog">
+    <menu class="dialog-menu">
+    <button className="nes-btn"
+    style={{
+        cursor: "pointer", 
+        marginTop: "-277px",
+        marginLeft: "596px",
+        width: "65px",
+        height:"65px"
+    }}
+    > <img src="../x-btn1.png" alt="close"/> </button>
+    </menu> 
+    </form>
+    </dialog>
     {/* ################################################################################### */}
-hi NOO WAYYYY!
+
     </>
 
 

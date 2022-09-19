@@ -27,7 +27,6 @@ background-position: center;
 background-color:transparent;
 height: 600px;
 width: 900px;
-margin-right: 900px;
 
 
 }
@@ -50,7 +49,7 @@ left: 963px;
 
 #text1 {
 font-size: 18px;
-top: 152px;
+top: 159px;
 right:-200px;
 min-width:200px;
 margin-left: 120px;
@@ -80,7 +79,7 @@ overflow: hidden;
 top: 0px;
 right:-1111px;
 width: 540px;
-margin-top: -60px;
+margin-top: 82%;
 margin-left: 40px;
 margin-right: 1600px;
 padding-inline: 30px;
@@ -88,10 +87,10 @@ overflow: hidden;
 }
 
 #text2a {
-    top: -247px;
+    top: -300px;
     right:-1111px;
     width: 540px;
-    margin-top: -60px;
+    margin-top:-10%;
     margin-left: 40px;
     margin-right: 1600px;
     padding-inline: 30px;
@@ -103,7 +102,7 @@ overflow: hidden;
     top: -1px;
     right:-1177px;
     width:396px;
-    margin-top: -60px;
+    margin-top: 1%;
     margin-left: 40px;
     margin-right: 1600px;
     padding-inline: 30px;
