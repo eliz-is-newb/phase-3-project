@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState} from "react";
 import AdminDetails from "./AdminDetails";
 import { Link } from "react-router-dom";
+import './FTFY.css';
 
 function GamesContainer({}) {
 
@@ -20,7 +21,7 @@ function GamesContainer({}) {
     } 
         getData()  
     }, [])  
-
+console.log(gamesData)
     // FETCH : POST #####################################
     // consts -------------------------------------------
     
@@ -28,11 +29,17 @@ function GamesContainer({}) {
         name: "", 
         description: "", 
         link: "", 
+        image: "",
+        user_id: 1
+    })
+    const [newChange, setNewChange] = useState({
+        name: "", 
         image: ""
     })
 
     // updating database ------------------------------------------
        function addNewEntry(e) {
+        console.log(e.target)
         setNewEntry(prevEntry => {
             return {...prevEntry, [e.target.name]: e.target.value}
         })
@@ -41,6 +48,7 @@ function GamesContainer({}) {
     // requests ------------------------------------------
     function handleSubmit(e) {
         e.preventDefault();
+        console.log("handleSubmit")
         fetch("http://localhost:3000/games", {  
         method: "POST", 
         headers: { 
@@ -49,8 +57,8 @@ function GamesContainer({}) {
             body: JSON.stringify(newEntry)
         }) 
             .then(res => res.json())
-            .then(data => newEntry(data))
-            console.log("handleSubmit")
+            .then(data => setGamesData([...gamesData, data]))
+           
     }
 
     // FETCH : PATCH ################################
@@ -59,29 +67,37 @@ function GamesContainer({}) {
 
     let addNewChanges = (e) => { 
         e.preventDefault()
-        const updateData = [...gamesData, e.target.value] 
-            setGamesData(updateData)
+        setNewChange(prevEntry => {
+            return {...prevEntry, [e.target.name]: e.target.value}
+        })
+        // const updateData = [...gamesData, e.target.value] 
+        //     setGamesData(updateData)
     }
 
     // requests ------------------------------------
 
-    const handleUpdate = async () => {
-        let req = fetch(`http://localhost:3000/games/${gamesData.id}`, {
+    const handleUpdate = async (e,id) => {
+        e.preventDefault();
+        let req = fetch(`http://localhost:3000/games/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-                name: "",
-                image: ""
-            }),
+            body: JSON.stringify(newChange),
+        })
+        .then(resp=> resp.json())
+        .then(data=>{
+            setGamesData(gamesData.filter((item)=> item.id !== data.id))
+            setGamesData((current)=>[data,...current])
+            // setRefresh(prevRefresh => !prevRefresh)
         })
     }
 
 
     // FETCH : DELETE ########################################
-    function handleDelete() {
-        fetch(`http://localhost:3000/games/${gamesData.id}`, { 
+    function handleDelete(id) {
+        console.log(id)
+        fetch(`http://localhost:3000/games/${id}`, { 
             method: "DELETE", 
             headers: {
             "Content-Type" : "application/json",
@@ -89,6 +105,7 @@ function GamesContainer({}) {
             }) 	
             setRefresh(prevRefresh => !prevRefresh)
             } 
+    
 
 
 
@@ -118,12 +135,14 @@ function GamesContainer({}) {
     <div > 
 
     <section> 
-    <div className="nes-dialog is-rounded" id="games-library-window"
-    style={{marginTop: "10%", marginRight: "40%", overflow:"auto", marginLeft: "10%", marginBottom:"500px"}}
+    <div className="" id="games-library-window"
+    style={{marginTop: "10%", marginRight: "10%", width:"700px", overflow:"auto", marginLeft: "0%", marginBottom:"500px"}}
     >
-        <form method="dialog">
+        <div method="dialog">
         {/* Title! */}
-        <p class="title">Update Game Info?</p>
+        <br/>
+        <p style={{marginLeft:"105px"}}
+        className="title">Update Game Info?</p>
         <br/>
 
         {/* ---------View!-------- */}
@@ -133,7 +152,7 @@ function GamesContainer({}) {
 
         {/* post, update, delete */}
         <button onClick={toggleNewInput}
-        style={{cursor: "pointer", marginLeft: "11px", width:"481px"}}
+        style={{cursor: "pointer", marginLeft: "105px", width:"481px"}}
             className="nes-btn">Create New!</button>
 
 
@@ -142,13 +161,13 @@ function GamesContainer({}) {
 
             {/* ternary to display the form */}
         {openCreateForm
-                    ?  <form className="nes-field" 
+                    ?  <form className="" 
                     onSubmit={handleSubmit} // post
                     onChange={addNewEntry}  // post
                     // style={{position: "absolute", zIndex: "90", top:"732px"}}
                     >
 
-
+<br/>
                         <br/> 
                         {/* name */}
                     <label for="name_field">Name?</label>
@@ -156,12 +175,13 @@ function GamesContainer({}) {
                         id="name_field"
                         // change this value
                         value={newEntry.name}
+                        name="name"
                         type="text" 
                         className="nes-input" 
                         placeholder="enter name"/>
                         
                     
-  
+                        <br/> <br/>
                     {/* description */}
                     <label for="description_field">Description?</label>
                     <input 
@@ -169,11 +189,12 @@ function GamesContainer({}) {
                         id="name_field"
                         // change this value
                         value={newEntry.description}
+                        name="description"
                         type="text" 
                         className="nes-input" 
                         placeholder="enter description:"/>
                         
-
+                        <br/>
                         <br/>
                         {/*  link */}
                     <label for="link_field">iFrame Link?</label>
@@ -182,11 +203,12 @@ function GamesContainer({}) {
                         id="name_field"
                         // change this value
                         value={newEntry.link}
+                        name="link"
                         type="text" 
                         className="nes-input" 
                         placeholder="enter link"/>
                     
-
+                    <br/>
                         <br/> 
                         {/* image */}
                     <label for="name_field">Image Src?</label>
@@ -195,10 +217,14 @@ function GamesContainer({}) {
                         id="name_field"
                         // change this value
                         value={newEntry.image}
+                        name="image"
                         type="text" 
                         className="nes-input" 
                         placeholder="enter img src link:"/>
                     
+                    <br/>
+                    <br/>
+                    <button className="nes-btn" type="submit"> submit </button>
                     {/* end of form */}
                     </form>
 
@@ -216,13 +242,16 @@ function GamesContainer({}) {
         >
                     <br/>
                     <br/>
+                   
                 {/* game img and game name */}
                 
-                <img src={game.image} alt="game image"/>
-                <p>{game.name}</p>
-
-        <button onClick={toggleEditInput}
-        style={{cursor: "pointer", marginLeft: "181px", width:"100px"}}
+                <img 
+                style={{width:"400px", marginLeft:"141px"}}
+                src={game.image} alt="game image"/>
+                <p className="nes-badge is-snapchat"style={{textAlign:"center", marginLeft:"141px"}}>{game.name}</p>
+                <br/>
+        <button className="nes-btn" onClick={toggleEditInput}
+        style={{cursor: "pointer", marginLeft: "147px", width:"250px", marginTop:"-2px", fontSize:"18px", marginBottom:"0px"}}
             className="nes-btn">Edit!</button>
             
             {/* form here */}
@@ -231,7 +260,7 @@ function GamesContainer({}) {
             {/* ternary to display the form on pop-up/modal - change to openUpdateForm */} 
             {openUpdateForm
                     ?  <form className="nes-field" 
-                    onSubmit={handleUpdate} //patch
+                    onSubmit={(e)=>handleUpdate(e,game.id)} //patch
                     onChange={addNewChanges} //patch
                     // change this submit 
                     // style={{position: "absolute", zIndex: "90", top:"732px"}}
@@ -246,7 +275,8 @@ function GamesContainer({}) {
                     
                         id="name_field"
                         
-                        value={addNewChanges}
+                        name="name"
+                        value={newChange.name}
                         type="text" 
                         className="nes-input" 
                         placeholder="New name?"/>  
@@ -258,13 +288,16 @@ function GamesContainer({}) {
                     <input 
                         id="name_field"
                         
-                        value={addNewChanges}
+                        name="image"
+                        value={newChange.image}
                         type="text" 
                         className="nes-input" 
                         placeholder="Change img src link:"/>
                     
 
-                
+                    <br/>
+                  
+                    <button className="nes-btn" type="submit"> submit </button>
                     
                     {/* end of form */}
                     </form>
@@ -276,29 +309,21 @@ function GamesContainer({}) {
 
 
             {/* form end */}
-            <br/>
-            <br/>
-
-        <button onClick={handleDelete}
-        style={{cursor: "pointer", marginLeft: "181px", width:"100px"}}
+            
+           
+        <button onClick={()=>handleDelete(game.id)}
+        style={{cursor: "pointer",  marginLeft: "415px", width:"120px", fontSize:"18px",marginTop:"-67px"}}
             className="nes-btn">Delete!</button>
+            <br/>
+            <br/>
 
         </div>
             )})}
         {/* end .map() from here */}
     
-        <menu className="dialog-menu">
-            <button style={{
-            cursor: "pointer", 
-            marginTop: "-40px",
-            marginLeft: "334px",
-            width: "65px",
-            height:"65px"
-        }}> 
-        <Link to="/admin"> <img src="../x-btn1.png" alt="close"/> </Link>
-            </button>
-            </menu>
-            </form>
+       
+         
+            </div>
            
         </div>
         </section>

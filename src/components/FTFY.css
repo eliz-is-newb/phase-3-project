@@ -1,6 +1,6 @@
 .nes-btn.is-blood {
-    color: #fff;
-    background-color: #930000;
+    color: rgb(0, 0, 0);
+    background-color: #fdfdfd;
   }
   
   .nes-btn.is-blood::after {
@@ -10,7 +10,7 @@
     bottom: -4px;
     left: -4px;
     content: "";
-    box-shadow: inset -4px -4px #620101;
+    box-shadow: inset -4px -4px #a7a6a6;
   }
   
   .nes-btn.is-blood:hover {
@@ -32,38 +32,41 @@
   }
 
   /* new color! */
-  .nes-btn.is-snapchat {
-    color: #fff;
-    background-color: #ffdd00;
+  .nes-badge.is-snapchat {
+    background-color: #f9e82c;
+    color: black;
+    padding: 3PX;
+    width:400px;
+    margin-bottom: 40px;
   }
   
-  .nes-btn.is-snapchat::after {
+  .nes-badge.is-snapchat::after {
     position: absolute;
-    top: -4px;
-    right: -4px;
+    top: 0px;
+    right: 0px;
     bottom: -4px;
-    left: -4px;
+    left: 0px;
     content: "";
-    box-shadow: inset -4px -4px #cb9910;
+    box-shadow: inset -4px -4px #949391;
   }
   
-  .nes-btn.is-snapchat:hover {
+  /* .nes-badge.is-snapchat:hover {
     color: #fff;
     text-decoration: none;
     background-color:#efd319;
   }
   
-  .nes-btn.is-snapchat:hover::after {
+  .nes-badge.is-snapchat:hover::after {
     box-shadow: inset -6px -6px #cca403;
   }
   
-  .nes-btn.is-snapchat:focus {
+  .nes-bagde.is-snapchat:focus {
     box-shadow: 0 0 0 6px rgba(140, 32, 34, 0.3);
   }
   
-  .nes-btn.is-snapchat:active:not(.is-disabled)::after {
+  .nes-badge.is-snapchat:active:not(.is-disabled)::after {
     box-shadow: inset 4px 4px #efe012;
-  }
+  } */
 
  
 .nes-btn.is-lil-darkie::after {

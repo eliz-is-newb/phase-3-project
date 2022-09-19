@@ -25,7 +25,12 @@ function QuotesContainer({  }) {
     
     const [newEntry, setNewEntry] = useState({
         quote: "",
-        link: ""
+        link: "",
+        user_id:1
+    })
+
+    const [newChange, setNewChange] = useState({
+        quote: ""
     })
 
     // updating database ------------------------------------------
@@ -34,7 +39,7 @@ function QuotesContainer({  }) {
             return {...prevEntry, [e.target.name]: e.target.value}
         })
     }
-
+   
     // requests ------------------------------------------
     function handleSubmit(e) {
         e.preventDefault();
@@ -42,42 +47,46 @@ function QuotesContainer({  }) {
         method: "POST", 
         headers: { 
         "Content-Type" : "application/json"
-        }, 
+          }, 
             body: JSON.stringify(newEntry)
         }) 
             .then(res => res.json())
-            .then(data => newEntry(data))
-            console.log("handleSubmit")
+            .then(data => setQuotesData([...quotesData, data]))
+           
     }
-
     // FETCH : PATCH ################################
 
     // updating databases  --------------------------
 
-    let addNewChanges = (newChange) => { 
-        newChange.preventDefault()
-        const updateData = [...quotesData, newChange] 
-            setQuotesData(updateData)
+    let addNewChanges = (e) => { 
+        e.preventDefault()
+        setNewChange(prevEntry => {
+            return {...prevEntry, [e.target.name]: e.target.value}
+        })
     }
 
     // requests ------------------------------------
 
-    const handleUpdate = async () => {
-        let req = fetch(`http://localhost:3000/quotes/${quotesData.id}`, {
+    const handleUpdate = async (e,id) => {
+        e.preventDefault()
+        let req = fetch(`http://localhost:3000/quotes/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-                quote: "",
-            }),
+            body: JSON.stringify(newChange),
+        })
+        .then(resp=> resp.json())
+        .then(data=>{
+            setQuotesData(quotesData.filter((item)=> item.id !== data.id))
+            setQuotesData((current)=>[data,...current])
         })
     }
 
 
     // FETCH : DELETE ########################################
-    function handleDelete() {
-        fetch(`http://localhost:3000/quotes/${quotesData.id}`, { 
+    function handleDelete(id) {
+        fetch(`http://localhost:3000/quotes/${id}`, { 
             method: "DELETE", 
             headers: {
             "Content-Type" : "application/json",
@@ -110,15 +119,15 @@ function QuotesContainer({  }) {
   return (
     <div >
     <section> 
-    <div className="nes-dialog is-rounded" id="quotes-library-window"
-       style={{marginTop: "10%", marginRight: "40%", overflow:"auto", marginLeft: "10%", marginBottom:"500px"}}
-
+    <div  id="quotes-library-window"
+     style={{marginTop: "10%", marginRight: "10%", width:"700px", overflow:"auto", marginLeft: "0%", marginBottom:"500px"}}
     >
-        <form method="dialog">
+        <div method="dialog">
         {/* Title! */}
-        <p class="title">Update Quotes Info?</p>
+        <p  style={{marginLeft:"105px", marginRight:"20px"}}
+        class="title">Update Quotes Info?</p>
         <br/>
-        <br/>
+        
 
         {/* ---------View!-------- */}
 
@@ -128,7 +137,7 @@ function QuotesContainer({  }) {
 
         {/* post, update, delete */}
         <button onClick={toggleNewInput}
-        style={{cursor: "pointer", marginLeft: "11px", width:"481px"}}
+        style={{cursor: "pointer", marginLeft: "105px", width:"481px"}}
             className="nes-btn">Create New!</button>
           
             <br/>
@@ -147,7 +156,7 @@ function QuotesContainer({  }) {
                     >
 
 
-                       <br/>
+                       <br/> <br/>
                       
                         {/* quote */}
                     <label for="name_field">Title?</label>
@@ -155,11 +164,12 @@ function QuotesContainer({  }) {
             
                         // change this value
                         value={newEntry.quote}
+                        name="quote"
                         type="text" 
                         className="nes-input" 
                         placeholder="enter title"/>
                         
-                        <br/>
+                        <br/> <br/> 
                         {/*  link */}
                     <label for="link_field">iFrame Link?</label>
                     <input 
@@ -167,10 +177,13 @@ function QuotesContainer({  }) {
                         id="name_field"
                     
                         value={newEntry.link}
+                        name="link"
                         type="text" 
                         className="nes-input" 
                         placeholder="enter link"/>
                         <br/>
+                        <button className="nes-btn" type="submit"> submit </button>
+
                         
                         </form></> 
                     
@@ -182,44 +195,46 @@ function QuotesContainer({  }) {
         {/* form end */}
         {quotesData.map(quote => {
             return (
-        <div id="admin-quotes-card" key={quote.id}>
+        <div id="admin-quotes-card" key={quote.id}
+        style={{overflow:"scroll"}}
+        >
                     <br/>
                     <br/>
                 {/* quote img and quote name */}
-                <iframe style={{width: "90%", height: "500px"}}
+                <iframe style={{width:"400px", height:"230px", marginLeft:"141px"}}
                 
                 src={quote.link} alt="game image"/>
-                <p>{quote.quote}</p>
+                <p className="nes-badge is-snapchat"style={{textAlign:"center", marginLeft:"141px"}}
+                >{quote.quote}</p>
+                
   
         <br/>
         <button onClick={toggleEditInput}
-        style={{cursor: "pointer", marginLeft: "181px", width:"100px"}}
+        style={{cursor: "pointer", marginLeft: "147px", width:"250px", marginTop:"-2px", fontSize:"18px", marginBottom:"0px"}}
             className="nes-btn">Edit!</button>
 
     {/* ternary to display the form on pop-up/modal */}
     {openUpdateForm
                     ? <> 
                     <form className="nes-field" 
-                    onSubmit={handleUpdate} //patch
+                    onSubmit={(e)=>handleUpdate(e,quote.id)} //patch
                     onChange={addNewChanges} //patch
                     // change this submit 
                     // style={{position: "absolute", zIndex: "90", top:"732px"}}
                     >
-
-
-                    
-
-                      
+                        <br/>
                         {/*  title */}
                     <label for="link_field">Title?</label>
                     <input 
                         id="name_field"
-                    
-                        value={addNewChanges.quote}
+                        name="quote"
+                        value={newChange.quote}
                         type="text" 
                         className="nes-input" 
                         placeholder="Change title"/>
-                    
+                        <br/>
+                        <button className="nes-btn" type="submit"> submit </button>
+
                     {/* end of form */}
                   
                     
@@ -230,25 +245,18 @@ function QuotesContainer({  }) {
             }
             <br/><br/>
 
-        <button onClick={handleDelete}	//delete
-        style={{cursor: "pointer", marginLeft: "181px", width:"100px"}}
+        <button onClick={()=>handleDelete(quote.id)}	//delete
+        style={{cursor: "pointer",  marginLeft: "415px", width:"120px", fontSize:"18px",marginTop:"-115px"}}
             className="nes-btn">Delete!</button>
+            <br/>
+            <br/>
+
             </div>
             )})}
         {/* end .map() from here */}
     
-        <menu className="dialog-menu">
-            <button style={{
-            cursor: "pointer", 
-            marginTop: "-40px",
-            marginLeft: "334px",
-            width: "65px",
-            height:"65px"
-        }}>
-           <Link to="/admin"> <img src="../x-btn1.png" alt="close"/> </Link>
-            </button>
-            </menu>
-            </form>
+       
+            </div>
         </div>
         </section>
     </div>
