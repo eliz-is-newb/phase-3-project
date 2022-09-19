@@ -115,7 +115,7 @@ function GamesContainer({}) {
 
 
   return (
-    <div> 
+    <div > 
 
     <section> 
     <div className="nes-dialog is-rounded" id="games-library-window"

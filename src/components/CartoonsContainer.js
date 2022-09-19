@@ -111,7 +111,7 @@ function CartoonsContainer({  }) {
 
 
   return (
-    <div>
+    <div >
     <section> 
     <div className="nes-dialog is-rounded" id="cartoons-library-window"
     style={{marginTop: "10%", marginRight: "40%", overflow:"auto", marginLeft: "10%", marginBottom:"500px"}}

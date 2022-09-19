@@ -25,19 +25,6 @@ const AdminDetails = ({ }) => {
         document.getElementById('admin-main-menu').showModal()
     }
 
-    // let openGameLibary = function(){
-    //     document.getElementById('games-library-window').showModal()
-    // }
-
-    let openCartoonLibary = function(){
-        document.getElementById('cartoons-library-window').showModal()
-    }
-
-    // let openQuotesLibary = function(){
-    //     document.getElementById('quotes-library-window').showModal()
-    // }
-
-
     // this page should contain:
     //    * the most basic css:
     //          * iteration of data with delete button 
@@ -57,9 +44,7 @@ const AdminDetails = ({ }) => {
     <button onClick={hello}
         style={{cursor: "pointer", marginLeft: "10%", marginTop:"4%", width:"50%"}}
             className="nes-btn">Hello Admin, Click for Directory</button>
-        <br/>
-
-        <br/>
+    
     <section>
 
             
@@ -70,7 +55,7 @@ const AdminDetails = ({ }) => {
     >
         <form method="dialog">
         {/* Title! */}
-        <p class="title">Hello Administrator... <br/> *wink* *wink*:</p>
+        <p class="title">Menu</p>
         <br/>
         
         {/* Buttons! */}
