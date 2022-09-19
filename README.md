@@ -4,7 +4,9 @@ This project was manufactured with React, JSX, (Bulma.io CSS, NES.css) framework
 
 
 ## What is it?
-This project is a multi-media platform that replicates a gameboy emulator. 
+This project is a multi-media platform that replicates a gameboy emulator. <br/>
+<br/> To get to home screen: Press power button on gameboy IMG. 
+
 - It contains three libraries of curated cartoons, games, and funny commercial-quotes styled as magic 8 ball answers. 
 - A user can browse through and play cartoons, games, and commercials.  
 - An admin can perform CRUD actions through the admin menu. 
