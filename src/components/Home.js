@@ -5,7 +5,9 @@ import FavoriteListPopUp from "./FavoriteListPopUp";
 import Magic8Ball from "./Magic8Ball";
 import { Link } from "react-router-dom";
 import AdminDetails from "./AdminDetails";
-import InputForAdmin from "./InputForAdmin";
+
+
+
 
 
 
@@ -17,7 +19,6 @@ const Home = () => {
     // for CRUD requirement
     const [isAdmin, setIsAdmin] = useState(false);
     const [showAdminInput, setShowAdminInput] = useState(false)
-    const [isAdminInputTrue, setIsAdminInputTrue] = useState("");
     
     //have a string as a key, if the input matches that key
    
@@ -231,7 +232,7 @@ return (
             }}>
     
         {/* HOVER ! */}
-        <div className="nes-btn is-lil-darkie"
+        <Link to="/admin" className="nes-btn is-lil-darkie"
        
        
             // copy pasta for actual button
@@ -254,7 +255,7 @@ return (
             <img src="../adminlock.png"
             style={{cursor: "pointer"}}
             
-            ></img></div>
+            ></img></Link>
         
             {isAdmin && (
         <p className="nes-badge" 
@@ -277,12 +278,13 @@ return (
             
 
             {/* Admin Details Pop-up */}
-            <AdminDetails />
+           
+          
             {/* <InputForAdmin setAdminInput={setIsAdminInputTrue} adminInput={isAdminInputTrue} /> */}
             <div id="input-container">
             
             {showAdminInput
-                ? <InputForAdmin setAdminInput={setIsAdminInputTrue} adminInput={isAdminInputTrue} />
+                ? <AdminDetails />
                 : null
             
             }
