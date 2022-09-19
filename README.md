@@ -1,13 +1,14 @@
 # Balancing Limbo
 
 This project was manufactured with React, JSX, (Bulma.io CSS, NES.css) frameworks, external iframes and a lot of fun content to work with, and browse through. 
+## To get to our app's home screen: 
+Press power button on gameboy image. 
 
 
-## What is it?
+## What is Balancing Limbo?
 This project is a multi-media platform that replicates a gameboy emulator. <br/>
 <br/> 
-## To get to home screen: 
-Press power button on gameboy image. 
+
 
 - It contains three libraries of curated cartoons, games, and funny commercial-quotes styled as magic 8 ball answers. 
 - A user can browse through and play cartoons, games, and commercials.  
