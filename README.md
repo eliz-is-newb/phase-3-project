@@ -15,10 +15,13 @@ This project is a multi-media platform that replicates a gameboy emulator. <br/>
 	
 	<img src="https://www.linkpicture.com/q/Screen-Shot-2022-09-18-at-1.32.58-PM.png"/>
 	<br/><br/>
-	The admin controls are public access (not password protected) at the moment due to beta-testing tech. 
+	The admin controls are public access (not password protected) at the moment due to beta-testing. This means anyone will have access to add, view, make changes or delete our current data held on our backend server. 
 	<br/><br/>
 	<img src="https://www.linkpicture.com/q/Screen-Shot-2022-09-18-at-1.36.10-PM.png"/>
 	<br/> <br/>
+	
+### Our Backend Server 
+is available on our external github repository, which is sourced on rails. localhost 3000. [https://github.com/eliz-is-newb/anime-project](Here.)
 
 
 ### A snippet speaking on our new tech we used for our react+ruby web app: 
