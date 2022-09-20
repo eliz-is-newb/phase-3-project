@@ -47,6 +47,7 @@ const AdminDetails = ({ }) => {
 
     return (
         <>
+        <p className="title">Admin Page</p>
     {/* ############################ Admin Menu in Pop-Up ############################### */}
 
     {/* <button onClick={hello}
