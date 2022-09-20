@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 
 const CartoonLibrary = () => {
 
-    
+    // hard code 1-3 and pick random between them to display 
+    // notation. only one iframe. set the source whatever.
     const [cartoons, setCartoons] = useState([])
    
     useEffect(() => {
@@ -160,7 +161,7 @@ return (
 
 
 {cartoons.map(cartoon => {
-        <div id="cartoons-container" key={cartoon.link}>
+        <div id="cartoons-container" key={cartoon.id}>
 
         
         {/* Where all the iframes are !! */}
