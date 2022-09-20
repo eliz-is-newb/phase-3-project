@@ -7,15 +7,13 @@ const GamesLibrary = () => {
 const [games, setGames] = useState([])
 const [showGames, setShowGames] = useState([])
 const [loadPlease, setLoadPlease] = useState(false)
+const [buttonHide, setButtonHide] = useState(false)
 
 // For the Game Name Label Hover ! 
 const [isShown, setIsShown] = useState(true); 
 
-let loadGame = function(){
-    setShowGames(showGames => !showGames)
-}
 
-let loadGame2 = function(){
+let loadGame = function(){
     document.getElementById('loadgame2').showModal()
 }
 
@@ -32,16 +30,16 @@ useEffect(() => {
     } 
     getData() 
 }, []) 
+
 return (
 <>
-    <div id="gameslibrary-bg">
+    <div style={{position: "relative"}} id="gameslibrary-bg">
             <div id="test"> 
-    <ResizableBox style={{marginLeft: "24px", marginBottom:"23px"}} width={1000} height={100} draggableOpts={{grid: [25, 25]}}
+    <ResizableBox style={{position:"absolute", right:"267px", bottom:"960px"}} width={1000} height={100} draggableOpts={{grid: [25, 25]}}
     minConstraints={[100, 100]} maxConstraints={[300, 300]}>
-        <Columns>
-        <Columns.Column></Columns.Column>
-         <Columns.Column size={5} style={{ padding: "-10px"}}>
-        <img  src="../bggb808.png"
+     
+         <div  style={{ padding: "-10px"}}>
+        <img  src="../bggb4.png"
         style={{
             marginLeft:"-29px",
             minHeight: "10%",
@@ -49,15 +47,9 @@ return (
             marginBottom: "-15px", 
             width: "1514px",
             minWidth: "1027px",
-            overflow: "hidden"
+            overflow: "auto"
         }}
-        ></img> 
-       
-       
-        </Columns.Column>
-        <Columns.Column></Columns.Column>
-
-        </Columns> 
+        ></img> </div>
 
         <div>
 
@@ -65,32 +57,46 @@ return (
         <p className="nes-container is-rounded" 
        
         style={{
-            zIndex: "5",
-            minWidth:"500px",
+            zIndex: "0",
+            minWidth:"250px",
             marginRight: "590px",
-            marginTop: "-750px",
-            marginLeft: "562px",
-            minHeight:"85px",
+            marginTop: "-710px",
+            marginLeft: "428px",
+            minHeight:"50px",
             color: "black",
             stroke: "ActiveBorder",
             fontSize: "18px",
-            fontWeight: "",textAlign: "center", backgroundColor:"darkred", color: "white"}}
-            >Warning... games may produce feelings of pleasure.
+            fontWeight: "",textAlign: "center", backgroundColor:"black", color: "white"}}
+            >Games library
             
         </p> 
+        <span 
+        style={{marginTop:"-90px", marginLeft:"740px",
+        color: "black"
+    }}
+        className="nes-badge">scroll here <br/> <br/>    --------> </span>
         </div>
+        
+   
+    </ResizableBox>
+      </div>
+      <div style={{position: "relative"}}>
+
+
 
         {/* Games Library Container */}
         <div id="gameslibrary-gameboy">
             <div id="gameslibrary-container"
             style={{
-                marginLeft: "400px",
-                backgroundColor: "green",
-                width: "800px",
+                position: "absolute",
+                top:"-618px",
+                right:"396px",
+                zIndex:"0",
+                width: "770px",
                 height: "484px",
                 marginTop:"-140px",
                 
-                overflow: "auto",
+                overflowY: "scroll",
                 scrollBehavior: "smooth",
                 alignItems: "center"}}>
 
@@ -104,7 +110,7 @@ return (
                     {isShown && (
                             <p className="nes-container is-rounded" 
                             style={{
-                                zIndex: "3",
+                                zIndex: "0",
                                 width:"250px",
                                
                                 marginTop: "180px",
@@ -126,8 +132,7 @@ return (
                             {/* Green Gameboy Image */}
                             <img 
 
-                             onMouseEnter={() => setIsShown(true)}
-                             onMouseLeave={() => setIsShown(true)}
+                       
 
                             style={{
                             
@@ -141,13 +146,15 @@ return (
 
                             {/* Load Game Button */}
                             <button className="nes-btn"
+                     
                             onClick={()=>{
                                 setShowGames(game)
                                 console.log(game)
                             
                             }} 
                             style={{
-                                zIndex: "1",
+                                position:"absolute",
+                                zIndex: "0",
                                 width:"200px",
                                 color: "black", 
                                 fontSize: "18px", 
@@ -168,26 +175,17 @@ return (
 
                     )                    
                 })}
-         
+         </div>
+         </div>
          </div>
         {/* Where all the iframes are !! */}
         <div id="loadgame2"
         style={{
-            // osition: absolute;
-            // z-index: 200;
-            // height: 499px;
-            // margin-top: -465px;
-            // width: 786px;
-            // margin-left: 389px;
+            position:"relative",
+            zIndex:"4"
         
-            position: "absolute",
-            
-            height: "499px", 
-            marginTop: "-465px",
-            width:"786px",
-            marginLeft:"389px",
-
-
+          
+//?? USE A POPUP!
             
         }}
         >
@@ -196,21 +194,15 @@ return (
             width="100%" height="100%"frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             */}
 
-            <iframe 
+            <iframe style={{position: "absolute", zIndex:"20", top:"-265px", right:"-65px"}}
             src={showGames.link}
             width="100%" height="100%"frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="false" ></iframe>
 
         
         {/* iframes go here! */}
         
-
         </div>
-        
-    </div>
-    </ResizableBox>
-     </div>
-
-</div>
+        </div>
 </>
 )
 

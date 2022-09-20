@@ -51,31 +51,39 @@ const AdminDetails = ({ }) => {
         <div id="admin-bg">
         <br></br>
         <br/>
-        <p style={{marginLeft:"87px", marginTop:"112px"}} className="title">Admin Page</p>
+        <div style={{marginLeft:"30%", marginTop:"10%", width:"40%", backgroundColor: "white"}}
+        className="nes-container is-rounded">
+        <p  className="title">Admin Page</p></div>
+        <br/>
+        <br/>
     {/* ############################ Admin Menu in Pop-Up ############################### */}
 
     {/* <button onClick={hello}
         style={{cursor: "pointer", marginLeft: "10%", marginTop:"4%", width:"50%"}}
             className="nes-btn">Hello Admin, Click for Directory</button> */}
-
-    <img style={{cursor: "pointer", marginLeft: "1444px", marginTop:"-94px", width:"148px", height:"116px"}}
+<div style={{position: "relative"}}>
+    <img style={{cursor: "pointer", position:"absolute", top:"31px", left:"452px", width:"7.5%"}}
     src="../foldericon.png" alt="folder"/>
     <button onClick={games}
-        style={{cursor: "pointer", marginLeft: "1430px", marginTop:"14px", width:"180px"}}
+        style={{cursor: "pointer", fontFamily:"intro-font", fontSize:"12px", position:"absolute", top:"129px", left:"422px", width:"12%"}}
             className="nes-btn">games folder</button>
 
-    <img style={{cursor: "pointer", marginLeft: "1444px", marginTop:"52px", width:"148px"}}
+
+
+    <img style={{cursor: "pointer", position:"absolute", top:"31px", left:"691px", width:"7.5%"}}
     src="../foldericon.png" alt="folder"/>
     <button onClick={cartoons}
-        style={{cursor: "pointer", marginLeft: "1430px", marginTop:"30px", width:"180px"}}
-            className="nes-btn">cartoons folder</button>
+        style={{cursor: "pointer", fontFamily:"intro-font", fontSize:"12px", position:"absolute", top:"129px", left:"665px", width:"12%"}}
+           className="nes-btn">cartoons folder</button> 
+           
 
-    <img style={{cursor: "pointer", marginLeft: "1444px", marginTop:"48px", width:"148px"}}
+
+    <img style={{cursor: "pointer", position:"absolute", top:"31px", left:"929px", width:"7.5%"}}
     src="../foldericon.png" alt="folder"/>
     <button onClick={quotes}
-        style={{cursor: "pointer", marginLeft: "1430px", marginTop:"30px", width:"180px"}}
+        style={{cursor: "pointer", fontFamily:"intro-font", fontSize:"12px", position:"absolute", top:"129px", left:"899px", width:"12%"}}
             className="nes-btn">quotes folder</button>
-    
+  </div>  
   
 
             

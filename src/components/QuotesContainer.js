@@ -138,8 +138,8 @@ function QuotesContainer({  }) {
 
         {/* post, update, delete */}
         <button onClick={toggleNewInput}
-        style={{cursor: "pointer", marginLeft: "105px", width:"481px"}}
-            className="nes-btn is-primary">Create New!</button>
+        style={{cursor: "pointer", marginLeft: "145px", width:"281px"}}
+            className="nes-btn">Create New!</button>
           
             <br/>
             

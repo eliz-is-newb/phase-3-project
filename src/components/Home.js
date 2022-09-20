@@ -44,20 +44,21 @@ const Home = () => {
 return (
     <>
     <div id="test"> 
-    <ResizableBox style={{marginLeft: "24px", marginBottom:"23px"}} width={1000} height={100} draggableOpts={{grid: [25, 25]}}
+    <ResizableBox style={{position:"absolute", right:"565px", bottom:"959px"}} width={1000} height={100} draggableOpts={{grid: [25, 25]}}
     minConstraints={[100, 100]} maxConstraints={[300, 300]}>
         <Columns>
         <Columns.Column></Columns.Column>
          <Columns.Column size={5} style={{ padding: "-10px"}}>
             {/* GAMEBOY DIV IMG SHIT THAT I SHOULDNT HAVE TOUCHED HAHAHA */}
-        <img  src="../bggb23.png"
+        <img  src="../bggb4.png"
         style={{
             marginLeft:"-29px",
             minHeight: "10%",
             marginTop: "150px",
-            marginBottom: "0%", 
+            marginBottom: "-15px", 
             width: "1514px",
             minWidth: "1027px",
+            overflow: "hidden"
         }}
         ></img> 
        

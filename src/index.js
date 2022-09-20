@@ -5,6 +5,7 @@ import "nes.css/css/nes.min.css";
 import 'bulma/css/bulma.min.css';
 import './components/FTFY.css'
 import App from './App';
+
 import { BrowserRouter } from "react-router-dom";
 
 
