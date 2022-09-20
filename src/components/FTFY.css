@@ -1,3 +1,17 @@
+#admin-bg{
+  /* background-image: url("./adminbg1.png");
+  background-repeat: no-repeat;*/
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height:100vh;
+  overflow: hidden;
+   
+
+   background-color: rgb(145, 181, 197);
+  }
+
+
 .nes-btn.is-blood {
     color: rgb(0, 0, 0);
     background-color: #fdfdfd;

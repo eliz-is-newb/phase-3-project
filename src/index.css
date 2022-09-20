@@ -2,6 +2,20 @@
   cursor: auto; 
 }
 
+html, body{
+  @font-face {
+    font-family: intro-font;
+    src: url(/public/Merchant\ Copy\ Doublesize.ttf);
+}
+}
+
+
+html, body {
+  overflow: -moz-scrollbars-vertical; 
+  overflow-y: scroll;
+}
+
+
 html, body {
   height:100vh;
 }

@@ -9,7 +9,7 @@ function Intro() {
 return (
 
 <div id='test' >
-        <Columns style={{overflow:"-moz-hidden-unscrollable"}}>
+        <Columns style={{}}>
             <Columns.Column>
                 <Columns.Column size={3}>
 

@@ -19,12 +19,13 @@ return (
         {/* Where all the iframes are !! */}
         <div 
         style={{
+            zIndex: "20",
             position: "absolute",
             backgroundColor:"green",
             height: "460px",
-            marginTop: "355px",
+            top: "208px",
             width:"748px",
-            marginLeft:"593px",
+            right:"344px",
             
         }}
         >
@@ -44,7 +45,7 @@ return (
         </div>
 
     <div id="test"> 
-    <ResizableBox style={{marginLeft: "136px"}} width={1000} height={100} draggableOpts={{grid: [25, 25]}}
+    <ResizableBox style={{position:"absolute", right:"565px", bottom:"959px"}} width={1000} height={100} draggableOpts={{grid: [25, 25]}}
     minConstraints={[100, 100]} maxConstraints={[300, 300]}>
          
          
@@ -52,7 +53,7 @@ return (
         style={{
             marginLeft:"317px",
             minHeight: "10%",
-            marginTop: "172px",
+            marginTop: "150px",
             marginBottom: "-15px", 
             width: "1514px",
             minWidth: "1027px",

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import GamesContainer from "./GamesContainer";
 import CartoonsContainer from "./CartoonsContainer";
 import QuotesContainer from "./QuotesContainer";
+import './FTFY.css';
 
 
 const AdminDetails = ({ }) => {
@@ -47,27 +48,42 @@ const AdminDetails = ({ }) => {
 
     return (
         <>
+        <div id="admin-bg">
+        <br></br>
+        <br/>
+        <div style={{marginLeft:"30%", marginTop:"10%", width:"40%", backgroundColor: "white"}}
+        className="nes-container is-rounded">
+        <p  className="title">Admin Page</p></div>
+        <br/>
+        <br/>
     {/* ############################ Admin Menu in Pop-Up ############################### */}
 
     {/* <button onClick={hello}
         style={{cursor: "pointer", marginLeft: "10%", marginTop:"4%", width:"50%"}}
             className="nes-btn">Hello Admin, Click for Directory</button> */}
-
-
+<div style={{position: "relative"}}>
+    <img style={{cursor: "pointer", position:"absolute", top:"31px", left:"452px", width:"7.5%"}}
+    src="../foldericon.png" alt="folder"/>
     <button onClick={games}
-        style={{cursor: "pointer", marginLeft: "10%", marginTop:"8%", width:"50%"}}
+        style={{cursor: "pointer", fontFamily:"intro-font", fontSize:"12px", position:"absolute", top:"129px", left:"422px", width:"12%"}}
             className="nes-btn">games folder</button>
 
-    
+
+
+    <img style={{cursor: "pointer", position:"absolute", top:"31px", left:"691px", width:"7.5%"}}
+    src="../foldericon.png" alt="folder"/>
     <button onClick={cartoons}
-        style={{cursor: "pointer", marginLeft: "10%", marginTop:"8%", width:"50%"}}
-            className="nes-btn">cartoons folder</button>
+        style={{cursor: "pointer", fontFamily:"intro-font", fontSize:"12px", position:"absolute", top:"129px", left:"665px", width:"12%"}}
+           className="nes-btn">cartoons folder</button> 
+           
 
 
+    <img style={{cursor: "pointer", position:"absolute", top:"31px", left:"929px", width:"7.5%"}}
+    src="../foldericon.png" alt="folder"/>
     <button onClick={quotes}
-        style={{cursor: "pointer", marginLeft: "10%", marginTop:"8%", width:"50%"}}
+        style={{cursor: "pointer", fontFamily:"intro-font", fontSize:"12px", position:"absolute", top:"129px", left:"899px", width:"12%"}}
             className="nes-btn">quotes folder</button>
-    
+  </div>  
   
 
             
@@ -80,6 +96,7 @@ const AdminDetails = ({ }) => {
     <GamesContainer/>
     <form method="dialog">
     <menu class="dialog-menu">
+        
     <button className="nes-btn"
     style={{
         cursor: "pointer", 
@@ -130,8 +147,9 @@ const AdminDetails = ({ }) => {
     </form>
     </dialog>
     {/* ################################################################################### */}
-
+    </div>
     </>
+    
 
 
 
