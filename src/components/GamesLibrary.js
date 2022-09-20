@@ -35,7 +35,7 @@ return (
 <>
     <div style={{position: "relative"}} id="gameslibrary-bg">
             <div id="test"> 
-    <ResizableBox style={{position:"absolute", right:"267px", bottom:"960px"}} width={1000} height={100} draggableOpts={{grid: [25, 25]}}
+    <ResizableBox style={{position:"absolute", right:"16%", top:"", minHeight:"1000px"}} width={1000} height={100} draggableOpts={{grid: [25, 25]}}
     minConstraints={[100, 100]} maxConstraints={[300, 300]}>
      
          <div  style={{ padding: "-10px"}}>
@@ -183,10 +183,10 @@ return (
         style={{
             position:"relative",
             zIndex:"4",
-            width:"807px",
-            height:"577px",
-            top:"-90px",
-            right:"-62px", 
+            width:"50%",
+            height:"53%",
+            top:"-9%",
+            right:"-6%", 
             backgroundColor:"black"
         
           
@@ -199,13 +199,30 @@ return (
             width="100%" height="100%"frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             */}
 
-            <iframe style={{position: "absolute", zIndex:"20", top:"-1px", right:"-65px"}}
+            <iframe style={{position: "absolute", zIndex:"20", top:"3%", right:"-65px"}}
             src={showGames.link}
             width="100%" height="100%"frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="false" ></iframe>
 
         
         {/* iframes go here! */}
+        <form method="dialog">
+    <menu class="dialog-menu">
         
+    <button className="nes-btn"
+    style={{
+        fontFamily:"intro-font",
+        fontSize:"12px",
+        zIndex:"200",
+        cursor: "pointer", 
+        position:"absolute",
+        top:"534px", 
+        right:"-53px",
+        width: "116px",
+        height:"38px"
+    }}
+    > go back </button>
+    </menu> 
+    </form>
         </dialog>
         </div>
 </>
