@@ -149,7 +149,7 @@ return (
                      
                             onClick={()=>{
                                 setShowGames(game)
-                                console.log(game)
+                                loadGame()
                             
                             }} 
                             style={{
@@ -179,10 +179,15 @@ return (
          </div>
          </div>
         {/* Where all the iframes are !! */}
-        <div id="loadgame2"
+        <dialog className="nes-dialog" id="loadgame2"
         style={{
             position:"relative",
-            zIndex:"4"
+            zIndex:"4",
+            width:"807px",
+            height:"577px",
+            top:"-90px",
+            right:"-62px", 
+            backgroundColor:"black"
         
           
 //?? USE A POPUP!
@@ -194,14 +199,14 @@ return (
             width="100%" height="100%"frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             */}
 
-            <iframe style={{position: "absolute", zIndex:"20", top:"-265px", right:"-65px"}}
+            <iframe style={{position: "absolute", zIndex:"20", top:"-1px", right:"-65px"}}
             src={showGames.link}
             width="100%" height="100%"frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="false" ></iframe>
 
         
         {/* iframes go here! */}
         
-        </div>
+        </dialog>
         </div>
 </>
 )
