@@ -205,7 +205,24 @@ return (
 
         
         {/* iframes go here! */}
+        <form method="dialog">
+    <menu class="dialog-menu">
         
+    <button className="nes-btn"
+    style={{
+        fontFamily:"intro-font",
+        fontSize:"12px",
+        zIndex:"200",
+        cursor: "pointer", 
+        position:"absolute",
+        top:"501px", 
+        right:"-30px",
+        width: "116px",
+        height:"38px"
+    }}
+    > go back </button>
+    </menu> 
+    </form>
         </dialog>
         </div>
 </>
