@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import GamesContainer from "./GamesContainer";
 import CartoonsContainer from "./CartoonsContainer";
 import QuotesContainer from "./QuotesContainer";
+import './FTFY.css';
 
 
 const AdminDetails = ({ }) => {
@@ -47,26 +48,32 @@ const AdminDetails = ({ }) => {
 
     return (
         <>
-        <p className="title">Admin Page</p>
+        <div id="admin-bg">
+        <br></br>
+        <br/>
+        <p style={{marginLeft:"87px", marginTop:"112px"}} className="title">Admin Page</p>
     {/* ############################ Admin Menu in Pop-Up ############################### */}
 
     {/* <button onClick={hello}
         style={{cursor: "pointer", marginLeft: "10%", marginTop:"4%", width:"50%"}}
             className="nes-btn">Hello Admin, Click for Directory</button> */}
 
-
+    <img style={{cursor: "pointer", marginLeft: "1444px", marginTop:"-94px", width:"148px", height:"116px"}}
+    src="../foldericon.png" alt="folder"/>
     <button onClick={games}
-        style={{cursor: "pointer", marginLeft: "10%", marginTop:"8%", width:"50%"}}
+        style={{cursor: "pointer", marginLeft: "1430px", marginTop:"14px", width:"180px"}}
             className="nes-btn">games folder</button>
 
-    
+    <img style={{cursor: "pointer", marginLeft: "1444px", marginTop:"52px", width:"148px"}}
+    src="../foldericon.png" alt="folder"/>
     <button onClick={cartoons}
-        style={{cursor: "pointer", marginLeft: "10%", marginTop:"8%", width:"50%"}}
+        style={{cursor: "pointer", marginLeft: "1430px", marginTop:"30px", width:"180px"}}
             className="nes-btn">cartoons folder</button>
 
-
+    <img style={{cursor: "pointer", marginLeft: "1444px", marginTop:"48px", width:"148px"}}
+    src="../foldericon.png" alt="folder"/>
     <button onClick={quotes}
-        style={{cursor: "pointer", marginLeft: "10%", marginTop:"8%", width:"50%"}}
+        style={{cursor: "pointer", marginLeft: "1430px", marginTop:"30px", width:"180px"}}
             className="nes-btn">quotes folder</button>
     
   
@@ -81,6 +88,7 @@ const AdminDetails = ({ }) => {
     <GamesContainer/>
     <form method="dialog">
     <menu class="dialog-menu">
+        
     <button className="nes-btn"
     style={{
         cursor: "pointer", 
@@ -131,8 +139,9 @@ const AdminDetails = ({ }) => {
     </form>
     </dialog>
     {/* ################################################################################### */}
-
+    </div>
     </>
+    
 
 
 

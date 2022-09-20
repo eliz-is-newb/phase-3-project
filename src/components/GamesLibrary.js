@@ -36,7 +36,7 @@ return (
 <>
     <div id="gameslibrary-bg">
             <div id="test"> 
-    <ResizableBox style={{marginLeft: "184px"}} width={1000} height={100} draggableOpts={{grid: [25, 25]}}
+    <ResizableBox style={{marginLeft: "24px", marginBottom:"23px"}} width={1000} height={100} draggableOpts={{grid: [25, 25]}}
     minConstraints={[100, 100]} maxConstraints={[300, 300]}>
         <Columns>
         <Columns.Column></Columns.Column>
@@ -45,7 +45,7 @@ return (
         style={{
             marginLeft:"-29px",
             minHeight: "10%",
-            marginTop: "172px",
+            marginTop: "150px",
             marginBottom: "-15px", 
             width: "1514px",
             minWidth: "1027px",

@@ -22,9 +22,9 @@ return (
             position: "absolute",
             backgroundColor:"green",
             height: "460px",
-            marginTop: "355px",
+            marginTop: "326px",
             width:"748px",
-            marginLeft:"593px",
+            marginLeft:"477px",
             
         }}
         >
@@ -44,7 +44,7 @@ return (
         </div>
 
     <div id="test"> 
-    <ResizableBox style={{marginLeft: "136px"}} width={1000} height={100} draggableOpts={{grid: [25, 25]}}
+    <ResizableBox style={{marginLeft: "24px", marginBottom:"23px"}} width={1000} height={100} draggableOpts={{grid: [25, 25]}}
     minConstraints={[100, 100]} maxConstraints={[300, 300]}>
          
          
@@ -52,7 +52,7 @@ return (
         style={{
             marginLeft:"317px",
             minHeight: "10%",
-            marginTop: "172px",
+            marginTop: "150px",
             marginBottom: "-15px", 
             width: "1514px",
             minWidth: "1027px",
