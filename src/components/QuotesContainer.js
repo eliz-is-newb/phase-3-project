@@ -126,7 +126,7 @@ function QuotesContainer({  }) {
         <div method="dialog">
         {/* Title! */}
         <p  style={{marginLeft:"105px", marginRight:"20px"}}
-        class="title">Update Quotes Info?</p>
+        class="title">Update Magic 8 Ball Fortunes?</p>
         <br/>
         
 

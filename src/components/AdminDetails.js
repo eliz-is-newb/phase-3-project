@@ -82,7 +82,7 @@ const AdminDetails = ({ }) => {
     src="../foldericon.png" alt="folder"/>
     <button onClick={quotes}
         style={{cursor: "pointer", fontFamily:"intro-font", fontSize:"12px", position:"absolute", top:"129px", left:"899px", width:"12%"}}
-            className="nes-btn">quotes folder</button>
+            className="nes-btn">magic 8 ball folder</button>
   </div>  
   
 

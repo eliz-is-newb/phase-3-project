@@ -42,8 +42,8 @@ return (
         <img  src="../bggb4.png"
         style={{
             marginLeft:"-45px",
-            minHeight: "10%",
-            marginTop: "65px",
+            minHeight: "11%",
+            marginTop: "60px",
             marginBottom: "-15px", 
             width: "1035px",
             minWidth: "1035px",
