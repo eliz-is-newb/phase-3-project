@@ -35,18 +35,18 @@ return (
 <>
     <div style={{position: "relative"}} id="gameslibrary-bg">
             <div id="test"> 
-    <ResizableBox style={{position:"absolute", right:"16%", top:"-10px", minHeight:"50px"}} width={1000} height={100} draggableOpts={{grid: [25, 25]}}
+    <ResizableBox style={{position:"absolute", right:"16%", top:"-6px", minHeight:"50px"}} width={1000} height={100} draggableOpts={{grid: [25, 25]}}
     minConstraints={[100, 100]} maxConstraints={[300, 300]}>
      
          <div  style={{ padding: "-10px"}}>
         <img  src="../bggb4.png"
         style={{
-            marginLeft:"-29px",
+            marginLeft:"-45px",
             minHeight: "10%",
-            marginTop: "63px",
+            marginTop: "65px",
             marginBottom: "-15px", 
-            width: "1514px",
-            minWidth: "1027px",
+            width: "1035px",
+            minWidth: "1035px",
             overflow: "auto"
         }}
         ></img> </div>
@@ -57,7 +57,7 @@ return (
         <p className="nes-container is-rounded" 
        
         style={{
-            zIndex: "0",
+            zIndex: "",
             minWidth:"250px",
             marginRight: "590px",
             marginTop: "-710px",
@@ -181,12 +181,13 @@ return (
         {/* Where all the iframes are !! */}
         <dialog className="nes-dialog" id="loadgame2"
         style={{
-            position:"relative",
+            
             zIndex:"4",
-            width:"50%",
-            height:"53%",
-            top:"-9%",
-            right:"-6%", 
+            width:"790px",
+            height:"510px",
+            top:"-80px",
+            right:"-20px",
+            marginRight:"390px", 
             backgroundColor:"black"
         
           
@@ -199,9 +200,9 @@ return (
             width="100%" height="100%"frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             */}
 
-            <iframe style={{position: "absolute", zIndex:"20", top:"3%", right:"-65px"}}
+            <iframe style={{ zIndex:"20", right:"-7px"}}
             src={showGames.link}
-            width="100%" height="100%"frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="false" ></iframe>
+            width="100%" height="120%"frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="false" ></iframe>
 
         
         {/* iframes go here! */}
@@ -215,8 +216,8 @@ return (
         zIndex:"200",
         cursor: "pointer", 
         position:"absolute",
-        top:"534px", 
-        right:"-53px",
+        top:"554px", 
+        right:"15px",
         width: "116px",
         height:"38px"
     }}
