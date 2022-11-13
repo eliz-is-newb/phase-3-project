@@ -35,7 +35,7 @@ return (
 <>
     <div style={{position: "relative"}} id="gameslibrary-bg">
             <div id="test"> 
-    <ResizableBox style={{position:"absolute", right:"16%", top:"", minHeight:"1000px"}} width={1000} height={100} draggableOpts={{grid: [25, 25]}}
+    <ResizableBox style={{position:"absolute", right:"16%", top:"-10px", minHeight:"50px"}} width={1000} height={100} draggableOpts={{grid: [25, 25]}}
     minConstraints={[100, 100]} maxConstraints={[300, 300]}>
      
          <div  style={{ padding: "-10px"}}>
@@ -43,7 +43,7 @@ return (
         style={{
             marginLeft:"-29px",
             minHeight: "10%",
-            marginTop: "150px",
+            marginTop: "63px",
             marginBottom: "-15px", 
             width: "1514px",
             minWidth: "1027px",
@@ -89,11 +89,11 @@ return (
             <div id="gameslibrary-container"
             style={{
                 position: "absolute",
-                top:"-618px",
-                right:"396px",
+                top:"-625px",
+                right:"380px",
                 zIndex:"0",
                 width: "770px",
-                height: "484px",
+                height: "494px",
                 marginTop:"-140px",
                 
                 overflowY: "scroll",
